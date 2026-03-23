@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coronas Customz | Auto Styling</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN for GHL compatibility -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                    },
+                    colors: {
+                        blue: {
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        html, body {
+            background-color: #050505 !important;
+            color: #ffffff !important;
+            font-family: 'Inter', sans-serif !important;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .cosmic-theme-wrapper {
+            background-color: #050505 !important;
+            color: #ffffff !important;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Ambient Particles Background */
+        .stars-container {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .star {
+            position: absolute;
+            background: #3b82f6; /* Shifted to blue */
+            border-radius: 50%;
+            animation: twinkle var(--duration, 4s) infinite ease-in-out alternate;
+            animation-delay: var(--delay, 0s);
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.1; transform: scale(0.8); }
+            100% { opacity: 0.8; transform: scale(1.2); box-shadow: 0 0 10px rgba(59,130,246,0.8); }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased relative !bg-[#050505] !text-white">
+
+<!-- GHL MASTER WRAPPER: Forces Dark Mode inside GHL builders -->
+<div class="cosmic-theme-wrapper min-h-screen w-full relative">
+
+    <!-- Glowing Background Overlay -->
+    <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] bg-white/5 rounded-full blur-[150px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none z-0"></div>
+
+    <!-- Ambient Particles Generator via JS -->
+    <div id="starlight-bg" class="stars-container"></div>
+
+    <!-- HEADER / NAVBAR -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-8">
+        <nav aria-label="Main Navigation" class="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-20">
+            <div class="flex items-center">
+                <!-- Replace src with your GoHighLevel Media URL -->
+                <img src="https://via.placeholder.com/200x60/ffffff/000000?text=UPLOAD+LOGO+HERE" alt="Coronas Customz Logo" class="h-10 md:h-12 object-contain" style="filter: invert(1) brightness(2);" />
+            </div>
+
+            <div class="hidden md:flex items-center gap-12">
+                <a href="#services" class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200 uppercase tracking-widest cursor-pointer">Services</a>
+                <a href="#gallery" class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200 uppercase tracking-widest cursor-pointer">Gallery</a>
+                <a href="#process" class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200 uppercase tracking-widest cursor-pointer">Process</a>
+                <a href="#reviews" class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200 uppercase tracking-widest cursor-pointer">Reviews</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden md:flex px-6 py-2 rounded-full bg-white text-black text-sm font-bold uppercase tracking-tighter hover:brightness-90 hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200 cursor-pointer items-center justify-center">
+                    Get Quote
+                </a>
+                <button id="mobile-menu-btn" aria-label="Toggle menu" class="md:hidden text-white p-2 -mr-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm">
+                    <!-- Hamburger Icon -->
+                    <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                    <!-- Close Icon (hidden initially) -->
+                    <svg id="icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-black border-t border-white/10 p-6 flex-col gap-6 shadow-2xl transition-all z-10 opacity-0 translate-y-[-20px] pointer-events-none">
+            <a href="#services" class="mobile-link text-lg font-medium text-white/80 hover:text-white transition-colors duration-200 cursor-pointer">Services</a>
+            <a href="#gallery" class="mobile-link text-lg font-medium text-white/80 hover:text-white transition-colors duration-200 cursor-pointer">Gallery</a>
+            <a href="#process" class="mobile-link text-lg font-medium text-white/80 hover:text-white transition-colors duration-200 cursor-pointer">Process</a>
+            <a href="#reviews" class="mobile-link text-lg font-medium text-white/80 hover:text-white transition-colors duration-200 cursor-pointer">Reviews</a>
+            <a href="#contact" class="mobile-link w-full py-4 rounded-xl bg-white text-black text-center font-bold uppercase cursor-pointer hover:brightness-90 active:scale-95 transition-all duration-200">Get Quote</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="relative h-screen flex flex-col justify-center overflow-hidden z-10 w-full min-h-[800px]">
+            <!-- Hero Background Image overlayed with dark gradient -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=2000" alt="Aggressive Custom Car" class="w-full h-full object-cover grayscale opacity-90">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-[#050505]"></div>
+            </div>
+
+            <div class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20 fade-in-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-8 fade-in-up" style="animation-delay: 0.1s">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" class="text-white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                    <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-blue-400">The Coronas Standard</span>
+                </div>
+
+                <h1 class="text-6xl md:text-8xl lg:text-9xl font-light tracking-tighter leading-[0.9] mb-8 fade-in-up" style="animation-delay: 0.2s">
+                    OWN THE <br />
+                    <span class="italic font-serif">STREETS</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-white/60 max-w-xl mx-auto mb-12 font-light fade-in-up" style="animation-delay: 0.3s">
+                    Premium color-shift wraps, precision window tinting, and elite styling for leaders who demand perfection. Stop driving stock.
+                </p>
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 fade-in-up" style="animation-delay: 0.4s">
+                    <a href="#contact" class="w-full md:w-auto px-10 py-5 rounded-full bg-blue-600 text-white font-bold uppercase tracking-tighter hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer inline-flex">
+                        Get a Free Quote
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                    <a href="#gallery" class="w-full md:w-auto px-10 py-5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md font-bold uppercase tracking-tighter hover:bg-white/10 active:scale-95 transition-all duration-200 cursor-pointer inline-flex justify-center">
+                        View Gallery
+                    </a>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30 flex flex-col items-center gap-2 animate-bounce">
+                <span class="text-[10px] uppercase tracking-widest font-bold">Scroll</span>
+                <div class="w-[1px] h-12 bg-gradient-to-b from-white/30 to-transparent"></div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="py-32 px-6 scroll-mt-24 z-10 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                    <div class="max-w-2xl">
+                        <span class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40 mb-4 block text-blue-400">Our Expertise</span>
+                        <h2 class="text-5xl md:text-7xl font-light tracking-tighter">
+                            ELEVATING THE <br />
+                            <span class="italic font-serif">AESTHETIC</span>
+                        </h2>
+                    </div>
+                    <p class="text-white/40 max-w-sm font-light">
+                        We specialize in high-end transformations that push the boundaries of automotive custom styling.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Premium Wraps -->
+                    <div class="group relative h-[500px] rounded-3xl overflow-hidden glass-card cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1000" alt="Premium Wraps" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8">
+                            <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/10">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            </div>
+                            <h3 class="text-3xl font-bold mb-3 tracking-tight">Premium Wraps</h3>
+                            <p class="text-white/60 font-light leading-relaxed mb-6">
+                                Flawless color changes that look like factory paint. We use only premium 3M and Inozetek films for a finish that turns heads.
+                            </p>
+                            <span class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#fff] group-hover:text-blue-400 transition-colors duration-200">
+                                Learn More 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Window Tint -->
+                    <div class="group relative h-[500px] rounded-3xl overflow-hidden glass-card cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1506085189-9a25b16fbcc3?auto=format&fit=crop&q=80&w=1000" alt="Window Tint & Styling" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8">
+                            <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/10">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                            </div>
+                            <h3 class="text-3xl font-bold mb-3 tracking-tight">Window Tinting</h3>
+                            <p class="text-white/60 font-light leading-relaxed mb-6">
+                                Complete privacy and heat rejection. We use premium nano-ceramic films to keep your cabin cool and looking aggressive.
+                            </p>
+                            <span class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#fff] group-hover:text-blue-400 transition-colors duration-200">
+                                Learn More 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Paint Protection -->
+                    <div class="group relative h-[500px] rounded-3xl overflow-hidden glass-card cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=1000" alt="Paint Protection" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8">
+                            <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/10">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 6.5 2a1 1 0 0 1 1 1z"/></svg>
+                            </div>
+                            <h3 class="text-3xl font-bold mb-3 tracking-tight">Paint Protection</h3>
+                            <p class="text-white/60 font-light leading-relaxed mb-6">
+                                Self-healing, invisible armor designed to take the hit so your original paint doesn't have to.
+                            </p>
+                            <span class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#fff] group-hover:text-blue-400 transition-colors duration-200">
+                                Learn More 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE GALLERY (Before/After Slider) -->
+        <section id="gallery" class="py-32 px-6 scroll-mt-24 z-10 relative">
+            <div class="max-w-6xl mx-auto bg-[#0a0a0a] text-white rounded-[60px] border border-white/5 shadow-[0_0_60px_rgba(37,99,235,0.05)] py-20 px-6 overflow-hidden">
+                <div class="text-center mb-16">
+                    <span class="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-4 block">Interactive Proof</span>
+                    <h2 class="text-5xl md:text-7xl font-light tracking-tighter mb-6">SEE THE <span class="italic font-serif">DIFFERENCE</span></h2>
+                    <p class="text-white/60 max-w-xl mx-auto font-light text-lg">
+                        Slide to reveal the transformation. We don't just work on cars; we completely reinvent them.
+                    </p>
+                </div>
+
+                <!-- Custom Slider Native HTML structure -->
+                <div id="before-after-container" class="relative w-full aspect-video rounded-3xl overflow-hidden cursor-e-resize touch-none select-none max-w-5xl mx-auto border border-black group">
+                    <!-- After Image -->
+                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=1600" alt="After" draggable="false" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute top-6 right-6 px-4 py-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 font-bold uppercase tracking-widest text-xs z-10">
+                        After
+                    </div>
+
+                    <!-- Before Image Container -->
+                    <div id="before-image" class="absolute inset-0 w-full h-full" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=1600" alt="Before" draggable="false" class="absolute inset-0 w-full h-full object-cover grayscale opacity-80">
+                        <div class="absolute top-6 left-6 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 font-bold uppercase tracking-widest text-xs z-10">
+                            Before
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Slider Line & Arrows -->
+                    <div id="slider-line" class="absolute top-0 bottom-0 w-[2px] bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,1)] z-20 pointer-events-none" style="left: 50%;">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-transform group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section id="process" class="py-32 px-6 scroll-mt-24 z-10 relative">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-24">
+                    <span class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40 mb-4 block">The Process</span>
+                    <h2 class="text-5xl md:text-7xl font-light tracking-tighter mb-6">ENGINEERED FOR <span class="italic font-serif">PERFECTION</span></h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-6xl font-bold text-white/5 mb-6 group-hover:text-blue-500/20 transition-colors duration-500">01</div>
+                        <h3 class="text-2xl font-bold mb-4 tracking-tight">Design Consultation</h3>
+                        <p class="text-white/50 font-light leading-relaxed text-sm">We map out your vision, review premium swatches, and lock in the exact specifications.</p>
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-blue-600 to-transparent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></div>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-6xl font-bold text-white/5 mb-6 group-hover:text-blue-500/20 transition-colors duration-500">02</div>
+                        <h3 class="text-2xl font-bold mb-4 tracking-tight">Precision Decon</h3>
+                        <p class="text-white/50 font-light leading-relaxed text-sm">A flawless wrap requires a flawless canvas. We meticulously decontaminate and prep every crevice.</p>
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-blue-600 to-transparent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></div>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-6xl font-bold text-white/5 mb-6 group-hover:text-blue-500/20 transition-colors duration-500">03</div>
+                        <h3 class="text-2xl font-bold mb-4 tracking-tight">Flawless Execution</h3>
+                        <p class="text-white/50 font-light leading-relaxed text-sm">Our certified technicians wrap and trim every edge with millimeter precision.</p>
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-blue-600 to-transparent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></div>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-6xl font-bold text-white/5 mb-6 group-hover:text-blue-500/20 transition-colors duration-500">04</div>
+                        <h3 class="text-2xl font-bold mb-4 tracking-tight">The Reveal</h3>
+                        <p class="text-white/50 font-light leading-relaxed text-sm">A multi-point inspection and a grand delivery. Drive off in your reinvented masterpiece.</p>
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-blue-600 to-transparent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS -->
+        <section id="reviews" class="py-32 px-6 scroll-mt-24 z-10 relative">
+            <div class="max-w-6xl mx-auto text-center bg-white/5 rounded-[60px] border border-white/5 py-24 px-6 relative overflow-hidden">
+                <span class="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-4 block relative z-10">Client Proof</span>
+                <h2 class="text-4xl md:text-6xl font-light tracking-tighter mb-16 relative z-10">THEY STOPPED DRIVING <span class="italic font-serif">STOCK</span></h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left relative z-10">
+                    <div class="bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:-translate-y-2 transition-transform duration-300 cursor-default">
+                        <div class="flex text-blue-500 mb-6 space-x-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p class="text-white/80 font-light italic mb-8 leading-relaxed">
+                            "Absolutely flawless execution. The color shift wrap looks better than factory paint. Best investment I've made, Coronas Customz killed it."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white/10"></div>
+                            <div>
+                                <div class="font-bold text-sm tracking-widest uppercase">Marcus T.</div>
+                                <div class="text-xs text-white/40">Porsche 911 GT3</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:-translate-y-2 transition-transform duration-300 cursor-default">
+                        <div class="flex text-blue-500 mb-6 space-x-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p class="text-white/80 font-light italic mb-8 leading-relaxed">
+                            "The window tint and styling package they put together for me was insane. Flawless cuts all around. Cannot recommend Coronas Customz enough."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white/10"></div>
+                            <div>
+                                <div class="font-bold text-sm tracking-widest uppercase">Elena R.</div>
+                                <div class="text-xs text-white/40">G-Wagon</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEAD FORM -->
+        <section id="contact" class="py-32 px-6 z-10 relative">
+            <div class="max-w-6xl mx-auto items-center grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-5xl md:text-7xl font-light tracking-tighter mb-6">REQUEST YOUR <br/><span class="italic font-serif text-blue-500">QUOTE</span></h2>
+                    <p class="text-white/60 text-lg font-light mb-8 max-w-md">
+                        Skip the back-and-forth. Tell us what you drive and what you want, and we'll send you an exact quote within 24 hours.
+                    </p>
+                    <ul class="space-y-4 text-white/80 font-light mb-12">
+                        <li class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-blue-500" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            Flawless edge-to-edge finish
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-blue-500" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 6.5 2a1 1 0 0 1 1 1z"/></svg> 
+                            Lifetime installation warranty
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-blue-500" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>    
+                            Certified master technicians
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- The Form -->
+                <div class="glass-card p-10 rounded-[40px] border border-white/10 shadow-2xl relative">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
+                    
+                    <form action="#" method="POST" class="relative z-10 space-y-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Make</label>
+                                <select name="vehicle_make" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer">
+                                    <option value="" class="bg-black">Select Make</option>
+                                    <option value="audi" class="bg-black">Audi</option>
+                                    <option value="bmw" class="bg-black">BMW</option>
+                                    <option value="dodge" class="bg-black">Dodge / Ram</option>
+                                    <option value="ford" class="bg-black">Ford</option>
+                                    <option value="mercedes" class="bg-black">Mercedes-Benz</option>
+                                    <option value="porsche" class="bg-black">Porsche</option>
+                                    <option value="other" class="bg-black">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Model & Year</label>
+                                <input type="text" name="vehicle_model" placeholder="e.g. 911 GT3 2024" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Desired Service</label>
+                            <select name="service_type" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer">
+                                <option value="" class="bg-black">Select Service</option>
+                                <option value="wrap" class="bg-black">Full Color Shift Wrap</option>
+                                <option value="starlight" class="bg-black">Premium Window Tinting</option>
+                                <option value="ppf" class="bg-black">Paint Protection Film (PPF)</option>
+                                <option value="combo" class="bg-black">The Works (Wrap + Tint + PPF)</option>
+                            </select>
+                        </div>
+            
+                        <div>
+                            <label class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Contact Info</label>
+                            <input type="email" name="email" placeholder="Your Email Address" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
+                        </div>
+            
+                        <button type="submit" class="w-full py-5 rounded-full bg-blue-600 text-white font-bold uppercase tracking-widest hover:bg-blue-500 active:scale-95 transition-all duration-200 mt-4 outline-none border-none">
+                            Get My Free Quote
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/5 py-12 px-6 z-10 relative mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between opacity-60 text-sm">
+            <div class="flex items-center mb-4 md:mb-0">
+                <img src="https://via.placeholder.com/150x45/ffffff/000000?text=UPLOAD+LOGO+HERE" alt="Coronas Customz Logo" class="h-8 object-contain" style="filter: invert(1) brightness(2);" />
+            </div>
+            <p>© 2026 Coronas Customz. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- STICKY CTA -->
+    <a href="#contact" class="fixed bottom-8 right-8 z-50 px-8 py-4 rounded-full bg-blue-600 text-white font-bold uppercase tracking-tighter shadow-2xl hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] active:scale-95 transition-all duration-200 flex items-center gap-3 group cursor-pointer border border-[#2563eb]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:rotate-12 transition-transform"><path d="m11.3 15.3 4.2-4.2-4.2-4.2"/><path d="M15 11H3"/><path d="m11 20 8-8-8-8"/></svg>
+        Get a Free Quote
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Animations
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                if(el.getBoundingClientRect().top < window.innerHeight - 50) {
+                    el.style.opacity = 1;
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // Setup initial state for animations
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+        });
+
+        // 1. Generate Ambient Background
+        const starsContainer = document.getElementById('starlight-bg');
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+            star.style.setProperty('--delay', (Math.random() * 2) + 's');
+            starsContainer.appendChild(star);
+        }
+
+        // 2. Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black/90', 'backdrop-blur-lg', 'border-b', 'border-white/5', 'shadow-2xl');
+                navbar.classList.remove('bg-transparent', 'py-8');
+                navbar.classList.add('py-4');
+            } else {
+                navbar.classList.remove('bg-black/90', 'backdrop-blur-lg', 'border-b', 'border-white/5', 'shadow-2xl');
+                navbar.classList.add('bg-transparent', 'py-8');
+                navbar.classList.remove('py-4');
+            }
+        });
+
+        // 3. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconClose = document.getElementById('icon-close');
+        
+        const toggleMenu = () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                setTimeout(() => {
+                    mobileMenu.classList.remove('opacity-0', 'translate-y-[-20px]', 'pointer-events-none');
+                }, 10);
+            } else {
+                mobileMenu.classList.add('opacity-0', 'translate-y-[-20px]', 'pointer-events-none');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                }, 300); // Wait for transition
+            }
+            iconMenu.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        };
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // 4. Interactive Gallery (Before/After Slider)
+        const container = document.getElementById('before-after-container');
+        const beforeImage = document.getElementById('before-image');
+        const sliderLine = document.getElementById('slider-line');
+
+        const moveSlider = (clientX) => {
+            const rect = container.getBoundingClientRect();
+            let x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+            let percentage = (x / rect.width) * 100;
+            
+            beforeImage.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+            sliderLine.style.left = `${percentage}%`;
+        };
+
+        container.addEventListener('mousemove', (e) => moveSlider(e.clientX));
+        container.addEventListener('touchmove', (e) => {
+            // Prevent scrolling when using slider on mobile
+            if(e.cancelable) e.preventDefault();
+            moveSlider(e.touches[0].clientX);
+        }, { passive: false });
+
+        // Trigger initial fade
+        setTimeout(() => window.dispatchEvent(new Event('scroll')), 100);
+    </script>
+</body>
+</html>
