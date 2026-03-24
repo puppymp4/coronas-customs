@@ -1865,7 +1865,7 @@
                                     id="summary-vehicle" class="text-white/60">—</span>
                             </p>
 
-                            <form action="#" method="POST" class="space-y-4 max-w-md mx-auto" id="quote-form">
+                            <form class="space-y-4 max-w-md mx-auto" id="quote-form" onsubmit="return false;">
                                 <div>
                                     <label
                                         class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Full
@@ -2188,27 +2188,36 @@
 
             document.getElementById('quote-form').addEventListener('submit', function (e) {
                 e.preventDefault();
+                e.stopPropagation();
 
-                // Collect all funnel data
-                const payload = {
-                    full_name: document.getElementById('f-name').value,
-                    email: document.getElementById('f-email').value,
-                    phone: document.getElementById('f-phone').value,
-                    service: serviceLabels[selectedService] || selectedService,
-                    vehicle_year: document.getElementById('f-year').value,
-                    vehicle_make: document.getElementById('f-make').value,
-                    vehicle_model: document.getElementById('f-model').value
-                };
+                // Read ALL values BEFORE any DOM changes
+                const nameVal = document.getElementById('f-name').value || '';
+                const emailVal = document.getElementById('f-email').value || '';
+                const phoneVal = document.getElementById('f-phone').value || '';
+                const yearVal = document.getElementById('f-year').value || '';
+                const makeVal = document.getElementById('f-make').value || '';
+                const modelVal = document.getElementById('f-model').value || '';
+                const serviceVal = serviceLabels[selectedService] || selectedService || '';
 
-                // Send to GHL webhook as form-data (no-cors safe)
-                const formData = new URLSearchParams(payload);
-                fetch(GHL_WEBHOOK, {
-                    method: 'POST',
-                    body: formData,
-                    mode: 'no-cors'
-                }).catch(() => {});
+                // Build URL-encoded body
+                const params = new URLSearchParams();
+                params.append('full_name', nameVal);
+                params.append('email', emailVal);
+                params.append('phone', phoneVal);
+                params.append('service', serviceVal);
+                params.append('vehicle_year', yearVal);
+                params.append('vehicle_make', makeVal);
+                params.append('vehicle_model', modelVal);
 
-                // Show success screen immediately
+                console.log('GHL Payload:', Object.fromEntries(params));
+
+                // Send via XMLHttpRequest (most reliable for cross-origin)
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', GHL_WEBHOOK, true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.send(params.toString());
+
+                // Show success screen
                 const step3 = document.getElementById('funnel-step-3');
                 step3.style.opacity = '0';
                 setTimeout(() => {
@@ -2219,6 +2228,8 @@
                     success.style.opacity = '1';
                     document.getElementById('step-progress').style.opacity = '0.3';
                 }, 350);
+
+                return false;
             });
 
             // Trigger initial fade
