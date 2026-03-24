@@ -672,6 +672,26 @@
 
     <!-- SCRIPTS -->
     <script>
+        // FORCE SCROLL TO TOP on page load — fixes hash (#contact, #services) causing mid-page jumps on reload
+        if (window.location.hash) {
+            history.replaceState(null, '', window.location.pathname);
+        }
+        window.scrollTo(0, 0);
+
+        // Smooth scroll for anchor links WITHOUT persisting hash in URL
+        document.addEventListener('click', (e) => {
+            const anchor = e.target.closest('a[href^="#"]');
+            if (anchor) {
+                e.preventDefault();
+                const targetId = anchor.getAttribute('href').slice(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Don't set hash — keeps URL clean so reloads go to top
+                }
+            }
+        });
+
         // Animations
         window.addEventListener('scroll', () => {
             document.querySelectorAll('.fade-in-up').forEach(el => {
