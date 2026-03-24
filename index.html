@@ -962,11 +962,32 @@
             line2.style.background = step >= 3 ? '#2563eb' : 'rgba(255,255,255,0.1)';
         }
 
-        // Form submit handler
+        // Form submit handler — sends to Go High Level webhook
+        const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/WUVAYLbNLTUKfH1ze9SV/webhook-trigger/1385a14c-93c3-4666-b284-07115f53ec24';
+
         document.getElementById('quote-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Hide step 3
+            // Collect all funnel data
+            const payload = {
+                full_name: document.getElementById('f-name').value,
+                email: document.getElementById('f-email').value,
+                phone: document.getElementById('f-phone').value,
+                service: serviceLabels[selectedService] || selectedService,
+                vehicle_year: document.getElementById('f-year').value,
+                vehicle_make: document.getElementById('f-make').value,
+                vehicle_model: document.getElementById('f-model').value
+            };
+
+            // Send to GHL webhook (fire and forget — don't block the UI)
+            fetch(GHL_WEBHOOK, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+                mode: 'no-cors' // GHL may not return CORS headers
+            }).catch(() => {}); // silently handle — user already sees success
+
+            // Show success screen immediately
             const step3 = document.getElementById('funnel-step-3');
             step3.style.opacity = '0';
             setTimeout(() => {
@@ -975,7 +996,6 @@
                 success.classList.remove('hidden');
                 void success.offsetWidth;
                 success.style.opacity = '1';
-                // Hide progress bar
                 document.getElementById('step-progress').style.opacity = '0.3';
             }, 350);
         });
