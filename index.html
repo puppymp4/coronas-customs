@@ -2200,19 +2200,13 @@
                     vehicle_model: document.getElementById('f-model').value
                 };
 
-                // Send to GHL webhook using sendBeacon (reliable, no CORS issues)
-                const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-                const sent = navigator.sendBeacon(GHL_WEBHOOK, blob);
-                
-                // Fallback: if sendBeacon fails, try fetch
-                if (!sent) {
-                    fetch(GHL_WEBHOOK, {
-                        method: 'POST',
-                        body: JSON.stringify(payload),
-                        headers: { 'Content-Type': 'text/plain' },
-                        mode: 'no-cors'
-                    }).catch(() => {});
-                }
+                // Send to GHL webhook as form-data (no-cors safe)
+                const formData = new URLSearchParams(payload);
+                fetch(GHL_WEBHOOK, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                }).catch(() => {});
 
                 // Show success screen immediately
                 const step3 = document.getElementById('funnel-step-3');
