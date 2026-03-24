@@ -1,1007 +1,2235 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coronas Customz | Premium Car Wraps, Starlight Headliners & Custom Styling in Fresno</title>
-    <meta name="description" content="Coronas Customz LLC in Fresno, CA — premium vinyl car wraps, starlight headliners, chrome deletes, and ambient lighting. Quality work, customer satisfaction guaranteed. Call (559) 513-5505.">
-    
+    <meta name="description"
+        content="Coronas Customz LLC in Fresno, CA — premium vinyl car wraps, starlight headliners, chrome deletes, and ambient lighting. Quality work, customer satisfaction guaranteed. Call (559) 513-5505.">
+
     <!-- Google Fonts - optimized with display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&display=swap"
+        rel="stylesheet">
+
     <!-- Preload hero image -->
     <link rel="preload" as="image" href="hero-car.png">
 
     <style>
         /* === RESET & BASE === */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body { background-color: #050505; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; line-height: 1.5; -webkit-font-smoothing: antialiased; }
-        img { max-width: 100%; height: auto; display: block; }
-        a { color: inherit; text-decoration: none; }
-        button { cursor: pointer; border: none; background: none; font-family: inherit; }
-        select, input { font-family: inherit; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            background-color: #050505;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+        }
+
+        select,
+        input {
+            font-family: inherit;
+        }
 
         /* === LAYOUT === */
-        .mx-auto { margin-left: auto; margin-right: auto; }
-        .max-w-7xl { max-width: 80rem; }
-        .max-w-6xl { max-width: 72rem; }
-        .max-w-5xl { max-width: 64rem; }
-        .max-w-4xl { max-width: 56rem; }
-        .max-w-2xl { max-width: 42rem; }
-        .max-w-xl { max-width: 36rem; }
-        .max-w-sm { max-width: 24rem; }
-        .max-w-md { max-width: 28rem; }
-        .w-full { width: 100%; }
-        .min-h-screen { min-height: 100vh; }
-        .h-screen { height: 100vh; }
-        .relative { position: relative; }
-        .absolute { position: absolute; }
-        .fixed { position: fixed; }
-        .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
-        .top-0 { top: 0; } .left-0 { left: 0; } .right-0 { right: 0; } .bottom-0 { bottom: 0; }
-        .z-0 { z-index: 0; } .z-10 { z-index: 10; } .z-20 { z-index: 20; } .z-50 { z-index: 50; }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .max-w-7xl {
+            max-width: 80rem;
+        }
+
+        .max-w-6xl {
+            max-width: 72rem;
+        }
+
+        .max-w-5xl {
+            max-width: 64rem;
+        }
+
+        .max-w-4xl {
+            max-width: 56rem;
+        }
+
+        .max-w-2xl {
+            max-width: 42rem;
+        }
+
+        .max-w-xl {
+            max-width: 36rem;
+        }
+
+        .max-w-sm {
+            max-width: 24rem;
+        }
+
+        .max-w-md {
+            max-width: 28rem;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .min-h-screen {
+            min-height: 100vh;
+        }
+
+        .h-screen {
+            height: 100vh;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .fixed {
+            position: fixed;
+        }
+
+        .inset-0 {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .top-0 {
+            top: 0;
+        }
+
+        .left-0 {
+            left: 0;
+        }
+
+        .right-0 {
+            right: 0;
+        }
+
+        .bottom-0 {
+            bottom: 0;
+        }
+
+        .z-0 {
+            z-index: 0;
+        }
+
+        .z-10 {
+            z-index: 10;
+        }
+
+        .z-20 {
+            z-index: 20;
+        }
+
+        .z-50 {
+            z-index: 50;
+        }
 
         /* === FLEXBOX & GRID === */
-        .flex { display: flex; } .hidden { display: none; } .block { display: block; } .grid { display: grid; } .inline-flex { display: inline-flex; }
-        .flex-col { flex-direction: column; }
-        .items-center { align-items: center; } .items-end { align-items: flex-end; }
-        .justify-center { justify-content: center; } .justify-between { justify-content: space-between; }
-        .gap-2 { gap: 0.5rem; } .gap-3 { gap: 0.75rem; } .gap-4 { gap: 1rem; } .gap-6 { gap: 1.5rem; } .gap-8 { gap: 2rem; } .gap-12 { gap: 3rem; } .gap-16 { gap: 4rem; }
-        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-        .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .space-x-1 > * + * { margin-left: 0.25rem; }
-        .space-y-4 > * + * { margin-top: 1rem; }
-        .space-y-6 > * + * { margin-top: 1.5rem; }
+        .flex {
+            display: flex;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .inline-flex {
+            display: inline-flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .items-end {
+            align-items: flex-end;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
+        .gap-3 {
+            gap: 0.75rem;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .gap-6 {
+            gap: 1.5rem;
+        }
+
+        .gap-8 {
+            gap: 2rem;
+        }
+
+        .gap-12 {
+            gap: 3rem;
+        }
+
+        .gap-16 {
+            gap: 4rem;
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .space-x-1>*+* {
+            margin-left: 0.25rem;
+        }
+
+        .space-y-4>*+* {
+            margin-top: 1rem;
+        }
+
+        .space-y-6>*+* {
+            margin-top: 1.5rem;
+        }
 
         /* === SPACING === */
-        .p-2 { padding: 0.5rem; } .p-6 { padding: 1.5rem; } .p-8 { padding: 2rem; } .p-10 { padding: 2.5rem; }
-        .px-4 { padding-left: 1rem; padding-right: 1rem; } .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; } .px-8 { padding-left: 2rem; padding-right: 2rem; } .px-10 { padding-left: 2.5rem; padding-right: 2.5rem; }
-        .py-1\.5 { padding-top: 0.375rem; padding-bottom: 0.375rem; } .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; } .py-4 { padding-top: 1rem; padding-bottom: 1rem; } .py-5 { padding-top: 1.25rem; padding-bottom: 1.25rem; } .py-8 { padding-top: 2rem; padding-bottom: 2rem; } .py-12 { padding-top: 3rem; padding-bottom: 3rem; } .py-20 { padding-top: 5rem; padding-bottom: 5rem; } .py-24 { padding-top: 6rem; padding-bottom: 6rem; } .py-32 { padding-top: 8rem; padding-bottom: 8rem; }
-        .pt-20 { padding-top: 5rem; }
-        .mb-3 { margin-bottom: 0.75rem; } .mb-4 { margin-bottom: 1rem; } .mb-6 { margin-bottom: 1.5rem; } .mb-8 { margin-bottom: 2rem; } .mb-12 { margin-bottom: 3rem; } .mb-16 { margin-bottom: 4rem; } .mb-20 { margin-bottom: 5rem; } .mb-24 { margin-bottom: 6rem; }
-        .mt-4 { margin-top: 1rem; } .mt-20 { margin-top: 5rem; }
-        .-mr-2 { margin-right: -0.5rem; }
-        .scroll-mt-24 { scroll-margin-top: 6rem; }
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-6 {
+            padding: 1.5rem;
+        }
+
+        .p-8 {
+            padding: 2rem;
+        }
+
+        .p-10 {
+            padding: 2.5rem;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .px-10 {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+
+        .py-1\.5 {
+            padding-top: 0.375rem;
+            padding-bottom: 0.375rem;
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .py-5 {
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem;
+        }
+
+        .py-8 {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .py-12 {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .py-20 {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .py-24 {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        .py-32 {
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+        }
+
+        .pt-20 {
+            padding-top: 5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .mb-12 {
+            margin-bottom: 3rem;
+        }
+
+        .mb-16 {
+            margin-bottom: 4rem;
+        }
+
+        .mb-20 {
+            margin-bottom: 5rem;
+        }
+
+        .mb-24 {
+            margin-bottom: 6rem;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+
+        .mt-20 {
+            margin-top: 5rem;
+        }
+
+        .-mr-2 {
+            margin-right: -0.5rem;
+        }
+
+        .scroll-mt-24 {
+            scroll-margin-top: 6rem;
+        }
 
         /* === TYPOGRAPHY === */
-        .text-xs { font-size: 0.75rem; line-height: 1rem; }
-        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
-        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
-        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-        .text-5xl { font-size: 3rem; line-height: 1; }
-        .text-6xl { font-size: 3.75rem; line-height: 1; }
-        .font-light { font-weight: 300; } .font-medium { font-weight: 500; } .font-bold { font-weight: 700; }
-        .italic { font-style: italic; }
-        .font-serif { font-family: 'Bodoni Moda', serif; }
-        .uppercase { text-transform: uppercase; }
-        .tracking-tight { letter-spacing: -0.025em; } .tracking-tighter { letter-spacing: -0.05em; } .tracking-widest { letter-spacing: 0.1em; }
-        .leading-relaxed { line-height: 1.625; }
-        .text-center { text-align: center; }
-        .text-left { text-align: left; }
+        .text-xs {
+            font-size: 0.75rem;
+            line-height: 1rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+
+        .text-5xl {
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .text-6xl {
+            font-size: 3.75rem;
+            line-height: 1;
+        }
+
+        .font-light {
+            font-weight: 300;
+        }
+
+        .font-medium {
+            font-weight: 500;
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .font-serif {
+            font-family: 'Bodoni Moda', serif;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        .tracking-tight {
+            letter-spacing: -0.025em;
+        }
+
+        .tracking-tighter {
+            letter-spacing: -0.05em;
+        }
+
+        .tracking-widest {
+            letter-spacing: 0.1em;
+        }
+
+        .leading-relaxed {
+            line-height: 1.625;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
 
         /* === COLORS === */
-        .text-white { color: #fff; } .text-black { color: #000; }
-        .text-white\/30 { color: rgba(255,255,255,0.3); } .text-white\/40 { color: rgba(255,255,255,0.4); } .text-white\/50 { color: rgba(255,255,255,0.5); } .text-white\/60 { color: rgba(255,255,255,0.6); } .text-white\/80 { color: rgba(255,255,255,0.8); }
-        .text-blue-400 { color: #60a5fa; } .text-blue-500 { color: #3b82f6; }
-        .bg-black { background-color: #000; } .bg-transparent { background-color: transparent; }
-        .bg-white { background-color: #fff; }
-        .bg-white\/5 { background-color: rgba(255,255,255,0.05); } .bg-white\/10 { background-color: rgba(255,255,255,0.1); }
-        .bg-black\/40 { background-color: rgba(0,0,0,0.4); } .bg-black\/50 { background-color: rgba(0,0,0,0.5); } .bg-black\/90 { background-color: rgba(0,0,0,0.9); }
-        .bg-blue-600 { background-color: #2563eb; } .bg-blue-500 { background-color: #3b82f6; }
-        .text-white\/5 { color: rgba(255,255,255,0.05); }
+        .text-white {
+            color: #fff;
+        }
+
+        .text-black {
+            color: #000;
+        }
+
+        .text-white\/30 {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .text-white\/40 {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .text-white\/50 {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .text-white\/60 {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .text-white\/80 {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .text-blue-400 {
+            color: #60a5fa;
+        }
+
+        .text-blue-500 {
+            color: #3b82f6;
+        }
+
+        .bg-black {
+            background-color: #000;
+        }
+
+        .bg-transparent {
+            background-color: transparent;
+        }
+
+        .bg-white {
+            background-color: #fff;
+        }
+
+        .bg-white\/5 {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .bg-white\/10 {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .bg-black\/40 {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .bg-black\/50 {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .bg-black\/90 {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .bg-blue-600 {
+            background-color: #2563eb;
+        }
+
+        .bg-blue-500 {
+            background-color: #3b82f6;
+        }
+
+        .text-white\/5 {
+            color: rgba(255, 255, 255, 0.05);
+        }
 
         /* === BORDERS & ROUNDED === */
-        .border { border-width: 1px; border-style: solid; } .border-t { border-top-width: 1px; border-top-style: solid; } .border-b { border-bottom-width: 1px; border-bottom-style: solid; }
-        .border-white\/5 { border-color: rgba(255,255,255,0.05); } .border-white\/10 { border-color: rgba(255,255,255,0.1); } .border-white\/20 { border-color: rgba(255,255,255,0.2); }
-        .border-black { border-color: #000; }
-        .rounded-full { border-radius: 9999px; } .rounded-xl { border-radius: 0.75rem; } .rounded-2xl { border-radius: 1rem; } .rounded-3xl { border-radius: 1.5rem; } .rounded-sm { border-radius: 0.125rem; }
-        .rounded-\[40px\] { border-radius: 40px; } .rounded-\[60px\] { border-radius: 60px; }
+        .border {
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        .border-t {
+            border-top-width: 1px;
+            border-top-style: solid;
+        }
+
+        .border-b {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+        }
+
+        .border-white\/5 {
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .border-white\/10 {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .border-white\/20 {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .border-black {
+            border-color: #000;
+        }
+
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem;
+        }
+
+        .rounded-2xl {
+            border-radius: 1rem;
+        }
+
+        .rounded-3xl {
+            border-radius: 1.5rem;
+        }
+
+        .rounded-sm {
+            border-radius: 0.125rem;
+        }
+
+        .rounded-\[40px\] {
+            border-radius: 40px;
+        }
+
+        .rounded-\[60px\] {
+            border-radius: 60px;
+        }
 
         /* === EFFECTS === */
-        .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
-        .backdrop-blur-md { backdrop-filter: blur(12px); } .backdrop-blur-lg { backdrop-filter: blur(16px); } .backdrop-blur-xl { backdrop-filter: blur(24px); }
-        .opacity-0 { opacity: 0; } .opacity-40 { opacity: 0.4; } .opacity-60 { opacity: 0.6; } .opacity-80 { opacity: 0.8; } .opacity-90 { opacity: 0.9; }
-        .grayscale { filter: grayscale(100%); }
-        .overflow-hidden { overflow: hidden; }
-        .pointer-events-none { pointer-events: none; }
-        .select-none { user-select: none; }
-        .touch-none { touch-action: none; }
-        .cursor-pointer { cursor: pointer; } .cursor-default { cursor: default; } .cursor-e-resize { cursor: e-resize; }
-        .object-cover { object-fit: cover; } .object-contain { object-fit: contain; }
-        .aspect-video { aspect-ratio: 16/9; }
+        .shadow-2xl {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .backdrop-blur-md {
+            backdrop-filter: blur(12px);
+        }
+
+        .backdrop-blur-lg {
+            backdrop-filter: blur(16px);
+        }
+
+        .backdrop-blur-xl {
+            backdrop-filter: blur(24px);
+        }
+
+        .opacity-0 {
+            opacity: 0;
+        }
+
+        .opacity-40 {
+            opacity: 0.4;
+        }
+
+        .opacity-60 {
+            opacity: 0.6;
+        }
+
+        .opacity-80 {
+            opacity: 0.8;
+        }
+
+        .opacity-90 {
+            opacity: 0.9;
+        }
+
+        .grayscale {
+            filter: grayscale(100%);
+        }
+
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        .pointer-events-none {
+            pointer-events: none;
+        }
+
+        .select-none {
+            user-select: none;
+        }
+
+        .touch-none {
+            touch-action: none;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .cursor-default {
+            cursor: default;
+        }
+
+        .cursor-e-resize {
+            cursor: e-resize;
+        }
+
+        .object-cover {
+            object-fit: cover;
+        }
+
+        .object-contain {
+            object-fit: contain;
+        }
+
+        .aspect-video {
+            aspect-ratio: 16/9;
+        }
 
         /* === TRANSFORMS === */
-        .translate-y-\[-20px\] { transform: translateY(-20px); }
-        .-translate-x-1\/2 { transform: translateX(-50%); }
-        .-translate-y-1\/2 { transform: translateY(-50%); }
+        .translate-y-\[-20px\] {
+            transform: translateY(-20px);
+        }
+
+        .-translate-x-1\/2 {
+            transform: translateX(-50%);
+        }
+
+        .-translate-y-1\/2 {
+            transform: translateY(-50%);
+        }
 
         /* === TRANSITIONS === */
-        .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
-        .transition-colors { transition-property: color, background-color, border-color; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
-        .transition-opacity { transition-property: opacity; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
-        .transition-transform { transition-property: transform; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
-        .duration-200 { transition-duration: 200ms; } .duration-300 { transition-duration: 300ms; } .duration-500 { transition-duration: 500ms; } .duration-700 { transition-duration: 700ms; }
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        .transition-colors {
+            transition-property: color, background-color, border-color;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        .transition-opacity {
+            transition-property: opacity;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        .transition-transform {
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        .duration-200 {
+            transition-duration: 200ms;
+        }
+
+        .duration-300 {
+            transition-duration: 300ms;
+        }
+
+        .duration-500 {
+            transition-duration: 500ms;
+        }
+
+        .duration-700 {
+            transition-duration: 700ms;
+        }
 
         /* === HOVER STATES === */
-        .group:hover .group-hover\:opacity-60 { opacity: 0.6; }
-        .group:hover .group-hover\:scale-105 { transform: scale(1.05); }
-        .group:hover .group-hover\:scale-110 { transform: scale(1.1); }
-        .group:hover .group-hover\:text-blue-400 { color: #60a5fa; }
-        .group:hover .group-hover\:text-blue-500\/20 { color: rgba(59,130,246,0.2); }
-        .group:hover .group-hover\:translate-x-1 { transform: translateX(0.25rem); }
-        .group:hover .group-hover\:rotate-12 { transform: rotate(12deg); }
-        .hover\:-translate-y-1:hover { transform: translateY(-0.25rem); }
-        .hover\:-translate-y-2:hover { transform: translateY(-0.5rem); }
-        .hover\:brightness-90:hover { filter: brightness(0.9); }
-        .hover\:bg-white\/10:hover { background-color: rgba(255,255,255,0.1); }
-        .hover\:bg-blue-500:hover { background-color: #3b82f6; }
-        .hover\:text-white:hover { color: #fff; }
-        .active\:scale-95:active { transform: scale(0.95); }
-        .hover\:shadow-lg:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .group:hover .group-hover\:opacity-60 {
+            opacity: 0.6;
+        }
+
+        .group:hover .group-hover\:scale-105 {
+            transform: scale(1.05);
+        }
+
+        .group:hover .group-hover\:scale-110 {
+            transform: scale(1.1);
+        }
+
+        .group:hover .group-hover\:text-blue-400 {
+            color: #60a5fa;
+        }
+
+        .group:hover .group-hover\:text-blue-500\/20 {
+            color: rgba(59, 130, 246, 0.2);
+        }
+
+        .group:hover .group-hover\:translate-x-1 {
+            transform: translateX(0.25rem);
+        }
+
+        .group:hover .group-hover\:rotate-12 {
+            transform: rotate(12deg);
+        }
+
+        .hover\:-translate-y-1:hover {
+            transform: translateY(-0.25rem);
+        }
+
+        .hover\:-translate-y-2:hover {
+            transform: translateY(-0.5rem);
+        }
+
+        .hover\:brightness-90:hover {
+            filter: brightness(0.9);
+        }
+
+        .hover\:bg-white\/10:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .hover\:bg-blue-500:hover {
+            background-color: #3b82f6;
+        }
+
+        .hover\:text-white:hover {
+            color: #fff;
+        }
+
+        .active\:scale-95:active {
+            transform: scale(0.95);
+        }
+
+        .hover\:shadow-lg:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
 
         /* === ANIMATIONS === */
-        @keyframes bounce { 0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8,0,1,1); } 50% { transform: none; animation-timing-function: cubic-bezier(0,0,0.2,1); } }
-        .animate-bounce { animation: bounce 1s infinite; }
-        @keyframes twinkle { 0% { opacity: 0.1; transform: scale(0.8) translateZ(0); } 100% { opacity: 0.8; transform: scale(1.2) translateZ(0); } }
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(-25%);
+                animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            }
+
+            50% {
+                transform: none;
+                animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+
+        .animate-bounce {
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.1;
+                transform: scale(0.8) translateZ(0);
+            }
+
+            100% {
+                opacity: 0.8;
+                transform: scale(1.2) translateZ(0);
+            }
+        }
 
         /* === CUSTOM COMPONENTS === */
-        .cosmic-theme-wrapper { background-color: #050505; color: #fff; }
-        .glass-card { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.05); }
-        .stars-container { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 0; overflow: hidden; }
-        .star { position: absolute; background: #3b82f6; border-radius: 50%; animation: twinkle var(--duration, 4s) infinite ease-in-out alternate; animation-delay: var(--delay, 0s); }
+        .cosmic-theme-wrapper {
+            background-color: #050505;
+            color: #fff;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: #3b82f6;
+            border-radius: 50%;
+            animation: twinkle var(--duration, 4s) infinite ease-in-out alternate;
+            animation-delay: var(--delay, 0s);
+        }
 
         /* === RESPONSIVE === */
         @media (min-width: 768px) {
-            .md\:flex { display: flex; }
-            .md\:hidden { display: none; }
-            .md\:flex-row { flex-direction: row; }
-            .md\:items-end { align-items: flex-end; }
-            .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-            .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-            .md\:text-7xl { font-size: 4.5rem; line-height: 1; }
-            .md\:text-6xl { font-size: 3.75rem; line-height: 1; }
-            .md\:text-8xl { font-size: 6rem; line-height: 1; }
-            .md\:text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-            .md\:h-12 { height: 3rem; }
-            .md\:w-auto { width: auto; }
-            .md\:mb-0 { margin-bottom: 0; }
+            .md\:flex {
+                display: flex;
+            }
+
+            .md\:hidden {
+                display: none;
+            }
+
+            .md\:flex-row {
+                flex-direction: row;
+            }
+
+            .md\:items-end {
+                align-items: flex-end;
+            }
+
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .md\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .md\:text-7xl {
+                font-size: 4.5rem;
+                line-height: 1;
+            }
+
+            .md\:text-6xl {
+                font-size: 3.75rem;
+                line-height: 1;
+            }
+
+            .md\:text-8xl {
+                font-size: 6rem;
+                line-height: 1;
+            }
+
+            .md\:text-xl {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+            }
+
+            .md\:h-12 {
+                height: 3rem;
+            }
+
+            .md\:w-auto {
+                width: auto;
+            }
+
+            .md\:mb-0 {
+                margin-bottom: 0;
+            }
         }
+
         @media (min-width: 1024px) {
-            .lg\:text-9xl { font-size: 8rem; line-height: 1; }
-            .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .lg\:text-9xl {
+                font-size: 8rem;
+                line-height: 1;
+            }
+
+            .lg\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
 
         /* === MOBILE FIXES === */
         @media (max-width: 767px) {
-            .py-32 { padding-top: 4rem; padding-bottom: 4rem; }
-            .py-24 { padding-top: 3rem; padding-bottom: 3rem; }
-            .text-5xl { font-size: 2.25rem; }
-            .text-6xl { font-size: 2.75rem; }
-            .text-4xl { font-size: 1.875rem; }
-            .mb-20 { margin-bottom: 3rem; }
-            .mb-24 { margin-bottom: 3rem; }
-            .mb-16 { margin-bottom: 2rem; }
-            .rounded-\[60px\] { border-radius: 1.5rem; }
-            .rounded-\[40px\] { border-radius: 1.25rem; }
-            .h-screen { height: auto; min-height: 100vh; min-height: 100svh; }
-            .grid-cols-2 { grid-template-columns: 1fr; }
-            .min-h-\[800px\] { min-height: auto; }
+            .py-32 {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+
+            .py-24 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+
+            .text-5xl {
+                font-size: 2.25rem;
+            }
+
+            .text-6xl {
+                font-size: 2.75rem;
+            }
+
+            .text-4xl {
+                font-size: 1.875rem;
+            }
+
+            .mb-20 {
+                margin-bottom: 3rem;
+            }
+
+            .mb-24 {
+                margin-bottom: 3rem;
+            }
+
+            .mb-16 {
+                margin-bottom: 2rem;
+            }
+
+            .rounded-\[60px\] {
+                border-radius: 1.5rem;
+            }
+
+            .rounded-\[40px\] {
+                border-radius: 1.25rem;
+            }
+
+            .h-screen {
+                height: auto;
+                min-height: 100vh;
+                min-height: 100svh;
+            }
+
+            .grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .min-h-\[800px\] {
+                min-height: auto;
+            }
         }
 
         /* === FOCUS STYLES === */
-        .focus-visible\:outline-none:focus-visible { outline: none; }
-        .focus-visible\:ring-2:focus-visible { box-shadow: 0 0 0 2px rgba(255,255,255,0.5); }
-        .focus\:outline-none:focus { outline: none; }
-        .focus\:ring-2:focus { box-shadow: 0 0 0 2px #3b82f6; }
-        .placeholder-white\/30::placeholder { color: rgba(255,255,255,0.3); }
+        .focus-visible\:outline-none:focus-visible {
+            outline: none;
+        }
+
+        .focus-visible\:ring-2:focus-visible {
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .focus\:outline-none:focus {
+            outline: none;
+        }
+
+        .focus\:ring-2:focus {
+            box-shadow: 0 0 0 2px #3b82f6;
+        }
+
+        .placeholder-white\/30::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
 
         /* Gradient helpers - not needed since we use inline styles, but kept for safety */
-        .bg-gradient-to-b { background-image: linear-gradient(to bottom, var(--tw-gradient-stops)); }
-        .bg-gradient-to-t { background-image: linear-gradient(to top, var(--tw-gradient-stops)); }
-        .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+        .bg-gradient-to-b {
+            background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+        }
+
+        .bg-gradient-to-t {
+            background-image: linear-gradient(to top, var(--tw-gradient-stops));
+        }
+
+        .bg-gradient-to-r {
+            background-image: linear-gradient(to right, var(--tw-gradient-stops));
+        }
 
         /* Scale transforms */
-        .scale-x-0 { transform: scaleX(0); }
-        .group:hover .group-hover\:scale-x-100 { transform: scaleX(1); }
-        .origin-left { transform-origin: left; }
+        .scale-x-0 {
+            transform: scaleX(0);
+        }
+
+        .group:hover .group-hover\:scale-x-100 {
+            transform: scaleX(1);
+        }
+
+        .origin-left {
+            transform-origin: left;
+        }
 
         /* Mobile hamburger: visible on mobile only */
-        #mobile-menu-btn { display: block; }
+        #mobile-menu-btn {
+            display: block;
+        }
+
         @media (min-width: 768px) {
-            #mobile-menu-btn { display: none !important; }
+            #mobile-menu-btn {
+                display: none !important;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+            * {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
         }
     </style>
 </head>
+
 <body style="background-color:#050505; color:#fff; position:relative; -webkit-font-smoothing:antialiased;">
 
-<!-- GHL MASTER WRAPPER: Forces Dark Mode inside GHL builders -->
-<div class="cosmic-theme-wrapper min-h-screen w-full relative">
+    <!-- GHL MASTER WRAPPER: Forces Dark Mode inside GHL builders -->
+    <div class="cosmic-theme-wrapper min-h-screen w-full relative">
 
-    <!-- High-Performance Radial Background Overlays (Replaced heavy blur filters) -->
-    <div class="fixed pointer-events-none z-0" style="top:-20%; left:-10%; width:50%; height:50%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); will-change: transform; transform: translateZ(0);"></div>
-    <div class="fixed pointer-events-none z-0" style="bottom:-20%; right:-10%; width:50%; height:50%; background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 70%); will-change: transform; transform: translateZ(0);"></div>
-
-    <!-- Ambient Particles Generator via JS -->
-    <div id="starlight-bg" class="stars-container"></div>
-
-    <!-- HEADER / NAVBAR -->
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-8">
-        <nav aria-label="Main Navigation" class="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-20">
-            <div class="flex items-center">
-                <!-- Vercel will load the logo.png from the local project folder -->
-                <img src="logo.png" alt="Coronas Customz Logo" class="object-contain" style="height:2.5rem; filter: invert(1) brightness(2);" />
-            </div>
-
-            <div class="hidden md:flex items-center gap-12">
-                <a href="#services" class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200 uppercase tracking-widest cursor-pointer">Services</a>
-                <a href="#gallery" class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200 uppercase tracking-widest cursor-pointer">Gallery</a>
-                <a href="#process" class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200 uppercase tracking-widest cursor-pointer">Process</a>
-                <a href="#reviews" class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200 uppercase tracking-widest cursor-pointer">Reviews</a>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <a href="#contact" class="hidden md:flex px-6 py-2 rounded-full bg-white text-black text-sm font-bold uppercase tracking-tighter hover:brightness-90 hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200 cursor-pointer items-center justify-center">
-                    Get Quote
-                </a>
-                <button id="mobile-menu-btn" aria-label="Toggle menu" class="text-white p-2 -mr-2 cursor-pointer rounded-sm" style="display:block;">
-                    <!-- Hamburger Icon -->
-                    <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-                    <!-- Close Icon (hidden initially) -->
-                    <svg id="icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-                </button>
-            </div>
-        </nav>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-black border-t border-white/10 p-6 flex-col gap-6 shadow-2xl transition-all z-10 opacity-0 translate-y-[-20px] pointer-events-none">
-            <a href="#services" class="mobile-link text-lg font-medium text-white/80 hover:text-white transition-colors duration-200 cursor-pointer">Services</a>
-            <a href="#gallery" class="mobile-link text-lg font-medium text-white/80 hover:text-white transition-colors duration-200 cursor-pointer">Gallery</a>
-            <a href="#process" class="mobile-link text-lg font-medium text-white/80 hover:text-white transition-colors duration-200 cursor-pointer">Process</a>
-            <a href="#reviews" class="mobile-link text-lg font-medium text-white/80 hover:text-white transition-colors duration-200 cursor-pointer">Reviews</a>
-            <a href="#contact" class="mobile-link w-full py-4 rounded-xl bg-white text-black text-center font-bold uppercase cursor-pointer hover:brightness-90 active:scale-95 transition-all duration-200">Get Quote</a>
+        <!-- High-Performance Radial Background Overlays (Replaced heavy blur filters) -->
+        <div class="fixed pointer-events-none z-0"
+            style="top:-20%; left:-10%; width:50%; height:50%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); will-change: transform; transform: translateZ(0);">
         </div>
-    </header>
+        <div class="fixed pointer-events-none z-0"
+            style="bottom:-20%; right:-10%; width:50%; height:50%; background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 70%); will-change: transform; transform: translateZ(0);">
+        </div>
 
-    <main>
-        <!-- HERO SECTION -->
-        <section class="relative h-screen flex flex-col justify-center overflow-hidden z-10 w-full" style="min-height:700px;">
-            <!-- Hero Background Image overlayed with dark gradient -->
-            <div class="absolute inset-0 z-0">
-                <img src="hero-shop.jpg" fetchpriority="high" alt="Coronas Customz Shop Interior with Custom Cars" class="w-full h-full object-cover" style="object-position:center center; opacity:0.85;">
-                <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.5), #050505);"></div>
-            </div>
+        <!-- Ambient Particles Generator via JS -->
+        <div id="starlight-bg" class="stars-container"></div>
 
-            <div class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20 fade-in-up">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-8 fade-in-up" style="animation-delay: 0.1s">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" class="text-white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-                    <span style="font-size:10px; letter-spacing:0.3em;" class="uppercase font-bold text-blue-400">Fresno's Favorite Custom Shop</span>
+        <!-- HEADER / NAVBAR -->
+        <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-8">
+            <nav aria-label="Main Navigation"
+                class="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-20">
+                <div class="flex items-center">
+                    <!-- Vercel will load the logo.png from the local project folder -->
+                    <img src="logo.png" alt="Coronas Customz Logo" class="object-contain"
+                        style="height:2.5rem; filter: invert(1) brightness(2);" />
                 </div>
 
-                <h1 class="text-6xl md:text-8xl lg:text-9xl font-light tracking-tighter mb-8 fade-in-up" style="animation-delay: 0.2s; line-height:0.9;">
-                    REDEFINING <br />
-                    YOUR <span class="italic font-serif">RIDE.</span><br />
-                    <span style="font-size:0.55em; color:rgba(255,255,255,0.5);">Inside and Out.</span>
-                </h1>
+                <div class="hidden md:flex items-center gap-12">
+                    <a href="#services"
+                        class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200 uppercase tracking-widest cursor-pointer">Services</a>
+                    <a href="#gallery"
+                        class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200 uppercase tracking-widest cursor-pointer">Gallery</a>
+                    <a href="#process"
+                        class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200 uppercase tracking-widest cursor-pointer">Process</a>
+                    <a href="#reviews"
+                        class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200 uppercase tracking-widest cursor-pointer">Reviews</a>
+                </div>
 
-                <p class="text-lg md:text-xl text-white/60 max-w-xl mx-auto mb-12 font-light fade-in-up" style="animation-delay: 0.3s">
-                    Car wraps, starlight headliners, chrome deletes, and ambient lighting for any car. From daily drivers to show cars — we treat every ride like our own.
-                </p>
-
-                <div class="flex flex-col md:flex-row items-center justify-center gap-4 fade-in-up" style="animation-delay: 0.4s">
-                    <a href="#contact" class="w-full md:w-auto px-10 py-5 rounded-full bg-blue-600 text-white font-bold uppercase tracking-tighter hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer inline-flex">
-                        Get a Free Quote
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <div class="flex items-center gap-4">
+                    <a href="#contact"
+                        class="hidden md:flex px-6 py-2 rounded-full bg-white text-black text-sm font-bold uppercase tracking-tighter hover:brightness-90 hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200 cursor-pointer items-center justify-center">
+                        Get Quote
                     </a>
-                    <a href="#gallery" class="w-full md:w-auto px-10 py-5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md font-bold uppercase tracking-tighter hover:bg-white/10 active:scale-95 transition-all duration-200 cursor-pointer inline-flex justify-center">
-                        View Gallery
-                    </a>
+                    <button id="mobile-menu-btn" aria-label="Toggle menu"
+                        class="text-white p-2 -mr-2 cursor-pointer rounded-sm" style="display:block;">
+                        <!-- Hamburger Icon -->
+                        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="4" x2="20" y1="12" y2="12" />
+                            <line x1="4" x2="20" y1="6" y2="6" />
+                            <line x1="4" x2="20" y1="18" y2="18" />
+                        </svg>
+                        <!-- Close Icon (hidden initially) -->
+                        <svg id="icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 6 6 18" />
+                            <path d="m6 6 12 12" />
+                        </svg>
+                    </button>
                 </div>
-            </div>
-            
-            <div class="absolute hidden md:flex flex-col items-center gap-2 animate-bounce" style="bottom:2.5rem; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.3);">
-                <span style="font-size:10px;" class="uppercase tracking-widest font-bold">Scroll</span>
-                <div style="width:1px; height:3rem; background:linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);"></div>
-            </div>
-        </section>
+            </nav>
 
-        <!-- SERVICES -->
-        <section id="services" class="py-32 px-6 scroll-mt-24 z-10 relative">
-            <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-                    <div class="max-w-2xl">
-                        <span style="font-size:10px; letter-spacing:0.4em; color:#60a5fa;" class="uppercase font-bold mb-4 block">What We Do</span>
-                        <h2 class="text-5xl md:text-7xl font-light tracking-tighter">
-                            MAKE YOUR CAR <br />
-                            <span class="italic font-serif">YOURS</span>
-                        </h2>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="hidden absolute top-full left-0 right-0 bg-black border-t border-white/10 p-6 flex-col gap-6 shadow-2xl transition-all z-10 opacity-0 translate-y-[-20px] pointer-events-none">
+                <a href="#services"
+                    class="mobile-link text-lg font-medium text-white/80 hover:text-white transition-colors duration-200 cursor-pointer">Services</a>
+                <a href="#gallery"
+                    class="mobile-link text-lg font-medium text-white/80 hover:text-white transition-colors duration-200 cursor-pointer">Gallery</a>
+                <a href="#process"
+                    class="mobile-link text-lg font-medium text-white/80 hover:text-white transition-colors duration-200 cursor-pointer">Process</a>
+                <a href="#reviews"
+                    class="mobile-link text-lg font-medium text-white/80 hover:text-white transition-colors duration-200 cursor-pointer">Reviews</a>
+                <a href="#contact"
+                    class="mobile-link w-full py-4 rounded-xl bg-white text-black text-center font-bold uppercase cursor-pointer hover:brightness-90 active:scale-95 transition-all duration-200">Get
+                    Quote</a>
+            </div>
+        </header>
+
+        <main>
+            <!-- HERO SECTION -->
+            <section class="relative h-screen flex flex-col justify-center overflow-hidden z-10 w-full"
+                style="min-height:700px;">
+                <!-- Hero Background Image overlayed with dark gradient -->
+                <div class="absolute inset-0 z-0">
+                    <img src="hero-shop.jpg" fetchpriority="high" alt="Coronas Customz Shop Interior with Custom Cars"
+                        class="w-full h-full object-cover" style="object-position:center center; opacity:0.85;">
+                    <div class="absolute inset-0"
+                        style="background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.5), #050505);">
                     </div>
-                    <p style="color:rgba(255,255,255,0.4);" class="max-w-sm font-light">
-                        Whether you drive a Honda Civic or a Corvette, we'll make it look exactly the way you want it. Quality work on every car that rolls through our doors.
+                </div>
+
+                <div class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20 fade-in-up">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-8 fade-in-up"
+                        style="animation-delay: 0.1s">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            class="text-white" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                        </svg>
+                        <span style="font-size:10px; letter-spacing:0.3em;"
+                            class="uppercase font-bold text-blue-400">Fresno's Favorite Custom Shop</span>
+                    </div>
+
+                    <h1 class="text-6xl md:text-8xl lg:text-9xl font-light tracking-tighter mb-8 fade-in-up"
+                        style="animation-delay: 0.2s; line-height:0.9;">
+                        REDEFINING <br />
+                        YOUR <span class="italic font-serif">RIDE.</span><br />
+                        <span style="font-size:0.55em; color:rgba(255,255,255,0.5);">Inside and Out.</span>
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-white/60 max-w-xl mx-auto mb-12 font-light fade-in-up"
+                        style="animation-delay: 0.3s">
+                        Car wraps, starlight headliners, chrome deletes, and ambient lighting for any car. From daily
+                        drivers to show cars — we treat every ride like our own.
                     </p>
+
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-4 fade-in-up"
+                        style="animation-delay: 0.4s">
+                        <a href="#contact"
+                            class="w-full md:w-auto px-10 py-5 rounded-full bg-blue-600 text-white font-bold uppercase tracking-tighter hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer inline-flex">
+                            Get a Free Quote
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#gallery"
+                            class="w-full md:w-auto px-10 py-5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md font-bold uppercase tracking-tighter hover:bg-white/10 active:scale-95 transition-all duration-200 cursor-pointer inline-flex justify-center">
+                            View Gallery
+                        </a>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" style="max-width:100%;">
-                    <!-- Car Wraps -->
-                    <div class="group relative rounded-3xl overflow-hidden glass-card cursor-pointer hover:-translate-y-2 transition-transform duration-300" style="height:420px;">
-                        <img loading="lazy" src="car-wrap.png" alt="Custom Vinyl Car Wrap by Coronas Customz" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.2), transparent);"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-8">
-                            <div style="width:3rem; height:3rem;" class="rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/10">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                            </div>
-                            <h3 class="text-3xl font-bold mb-3 tracking-tight">Car Wraps</h3>
-                            <p style="color:rgba(255,255,255,0.6);" class="font-light leading-relaxed mb-6">
-                                Full and partial vinyl wraps to completely change the look of your car. We use quality films so it looks clean and lasts.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Starlight Headliner -->
-                    <div class="group relative rounded-3xl overflow-hidden glass-card cursor-pointer hover:-translate-y-2 transition-transform duration-300" style="height:420px;">
-                        <img loading="lazy" src="starlight-headliner.png" alt="Starlight Headliner Installation by Coronas Customz" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.2), transparent);"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-8">
-                            <div style="width:3rem; height:3rem;" class="rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/10">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-                            </div>
-                            <h3 class="text-3xl font-bold mb-3 tracking-tight">Starlight Headliner</h3>
-                            <p style="color:rgba(255,255,255,0.6);" class="font-light leading-relaxed mb-6">
-                                Fiber optic star ceilings you can control from your phone. Multiple colors and settings — everyone who sees it wants one.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Chrome Deletes -->
-                    <div class="group relative rounded-3xl overflow-hidden glass-card cursor-pointer hover:-translate-y-2 transition-transform duration-300" style="height:420px;">
-                        <img loading="lazy" src="chrome-delete.png" alt="Chrome Delete Service by Coronas Customz" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.2), transparent);"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-8">
-                            <div style="width:3rem; height:3rem;" class="rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/10">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 6.5 2a1 1 0 0 1 1 1z"/></svg>
-                            </div>
-                            <h3 class="text-3xl font-bold mb-3 tracking-tight">Chrome Deletes</h3>
-                            <p style="color:rgba(255,255,255,0.6);" class="font-light leading-relaxed mb-6">
-                                Black out your chrome trim for a clean, blacked-out look. Window trim, badges, handles — it all gets the stealth treatment.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Ambient Lighting -->
-                    <div class="group relative rounded-3xl overflow-hidden glass-card cursor-pointer hover:-translate-y-2 transition-transform duration-300" style="height:420px;">
-                        <img loading="lazy" src="ambient-lighting.png" alt="Ambient Interior Lighting by Coronas Customz" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.2), transparent);"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-8">
-                            <div style="width:3rem; height:3rem;" class="rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/10">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                            </div>
-                            <h3 class="text-3xl font-bold mb-3 tracking-tight">Ambient Lighting</h3>
-                            <p style="color:rgba(255,255,255,0.6);" class="font-light leading-relaxed mb-6">
-                                Custom LED lighting along your doors, dash, and footwells. Clean install that looks factory — and incredible at night.
-                            </p>
-                        </div>
+                <div class="absolute hidden md:flex flex-col items-center gap-2 animate-bounce"
+                    style="bottom:2.5rem; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.3);">
+                    <span style="font-size:10px;" class="uppercase tracking-widest font-bold">Scroll</span>
+                    <div
+                        style="width:1px; height:3rem; background:linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);">
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- INTERACTIVE GALLERY (Before/After Slider) -->
-        <section id="gallery" class="py-32 px-6 scroll-mt-24 z-10 relative">
-            <div class="max-w-6xl mx-auto text-white overflow-hidden" style="background:#0a0a0a; border-radius:60px; border:1px solid rgba(255,255,255,0.05); box-shadow:0 0 60px rgba(37,99,235,0.05); padding:5rem 1.5rem;">
-                <div class="text-center mb-16">
-                    <span style="font-size:10px; letter-spacing:0.4em; color:#3b82f6;" class="uppercase font-bold mb-4 block">Real Results</span>
-                    <h2 class="text-5xl md:text-7xl font-light tracking-tighter mb-6">SEE THE <span class="italic font-serif">DIFFERENCE</span></h2>
-                    <p style="color:rgba(255,255,255,0.6);" class="max-w-xl mx-auto font-light text-lg">
-                        Slide to see the before and after. Same car, completely different vibe.
-                    </p>
-                </div>
-
-                <!-- Custom Slider Native HTML structure -->
-                <div id="before-after-container" class="relative w-full aspect-video rounded-3xl overflow-hidden cursor-e-resize touch-none select-none max-w-5xl mx-auto group" style="border:1px solid #000;">
-                    <!-- After Image -->
-                    <img loading="lazy" src="gallery-after.jpg" alt="After - Pink Wrapped Chevy Malibu by Coronas Customz" draggable="false" class="absolute inset-0 w-full h-full object-cover" style="will-change: transform; transform: translateZ(0);">
-                    <div class="absolute px-4 py-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 font-bold uppercase tracking-widest text-xs z-10" style="top:1.5rem; right:1.5rem;">
-                        After
-                    </div>
-
-                    <!-- Before Image Container -->
-                    <div id="before-image" class="absolute inset-0 w-full h-full" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
-                        <img loading="lazy" src="gallery-before.jpg" alt="Before - White Chevy Malibu" draggable="false" class="absolute inset-0 w-full h-full object-cover" style="will-change: transform; transform: translateZ(0);">
-                        <div class="absolute px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 font-bold uppercase tracking-widest text-xs z-10" style="top:1.5rem; left:1.5rem;">
-                            Before
+            <!-- SERVICES -->
+            <section id="services" class="py-32 px-6 scroll-mt-24 z-10 relative">
+                <div class="max-w-7xl mx-auto">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                        <div class="max-w-2xl">
+                            <span style="font-size:10px; letter-spacing:0.4em; color:#60a5fa;"
+                                class="uppercase font-bold mb-4 block">What We Do</span>
+                            <h2 class="text-5xl md:text-7xl font-light tracking-tighter">
+                                MAKE YOUR CAR <br />
+                                <span class="italic font-serif">YOURS</span>
+                            </h2>
                         </div>
-                    </div>
-
-                    <!-- Dynamic Slider Line & Arrows -->
-                    <div id="slider-line" class="absolute top-0 bottom-0 z-20 pointer-events-none" style="width:2px; background:#2563eb; box-shadow:0 0 15px rgba(37,99,235,1); left:50%;">
-                        <div class="absolute bg-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform" style="top:50%; left:50%; transform:translate(-50%,-50%); width:2.5rem; height:2.5rem; box-shadow:0 0 20px rgba(37,99,235,0.5);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROCESS -->
-        <section id="process" class="py-32 px-6 scroll-mt-24 z-10 relative">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-24">
-                    <span style="font-size:10px; letter-spacing:0.4em; color:rgba(255,255,255,0.4);" class="uppercase font-bold mb-4 block">How It Works</span>
-                    <h2 class="text-5xl md:text-7xl font-light tracking-tighter mb-6">SIMPLE <span class="italic font-serif">PROCESS</span></h2>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
-                        <div class="text-6xl font-bold text-white/5 mb-6 group-hover:text-blue-500/20 transition-colors duration-500">01</div>
-                        <h3 class="text-2xl font-bold mb-4 tracking-tight">Tell Us What You Want</h3>
-                        <p class="text-white/50 font-light leading-relaxed text-sm">Show us your ideas, pick your colors, and we'll figure out the best way to make it happen.</p>
-                        <div class="absolute top-0 left-0 w-full" style="height:2px; background:linear-gradient(to right, #2563eb, transparent); transform:scaleX(0); transform-origin:left; transition:transform 0.5s;"></div>
-                    </div>
-                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
-                        <div class="text-6xl font-bold text-white/5 mb-6 group-hover:text-blue-500/20 transition-colors duration-500">02</div>
-                        <h3 class="text-2xl font-bold mb-4 tracking-tight">Prep Work</h3>
-                        <p class="text-white/50 font-light leading-relaxed text-sm">A clean surface means a clean result. We fully prep your car before any work starts.</p>
-                        <div class="absolute top-0 left-0 w-full" style="height:2px; background:linear-gradient(to right, #2563eb, transparent); transform:scaleX(0); transform-origin:left; transition:transform 0.5s;"></div>
-                    </div>
-                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
-                        <div class="text-6xl font-bold text-white/5 mb-6 group-hover:text-blue-500/20 transition-colors duration-500">03</div>
-                        <h3 class="text-2xl font-bold mb-4 tracking-tight">We Get To Work</h3>
-                        <p class="text-white/50 font-light leading-relaxed text-sm">Our team handles every edge and detail with care. No shortcuts, no rushing.</p>
-                        <div class="absolute top-0 left-0 w-full" style="height:2px; background:linear-gradient(to right, #2563eb, transparent); transform:scaleX(0); transform-origin:left; transition:transform 0.5s;"></div>
-                    </div>
-                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
-                        <div class="text-6xl font-bold text-white/5 mb-6 group-hover:text-blue-500/20 transition-colors duration-500">04</div>
-                        <h3 class="text-2xl font-bold mb-4 tracking-tight">The Reveal</h3>
-                        <p class="text-white/50 font-light leading-relaxed text-sm">We check everything before you pick it up. Drive off knowing it's done right.</p>
-                        <div class="absolute top-0 left-0 w-full" style="height:2px; background:linear-gradient(to right, #2563eb, transparent); transform:scaleX(0); transform-origin:left; transition:transform 0.5s;"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="reviews" class="py-32 px-6 scroll-mt-24 z-10 relative">
-            <div class="max-w-6xl mx-auto text-center bg-white/5 py-24 px-6 relative overflow-hidden" style="border-radius:60px; border:1px solid rgba(255,255,255,0.05);">
-                <span style="font-size:10px; letter-spacing:0.4em; color:#3b82f6;" class="uppercase font-bold mb-4 block relative z-10">Real Reviews</span>
-                <h2 class="text-4xl md:text-6xl font-light tracking-tighter mb-16 relative z-10">WHAT OUR <span class="italic font-serif">CLIENTS</span> SAY</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left relative z-10" style="max-width:100%;">
-                    <!-- Review 1: Angel D. - Yelp -->
-                    <div class="bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:-translate-y-2 transition-transform duration-300 cursor-default">
-                        <div class="flex text-blue-500 mb-4 space-x-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <p style="color:rgba(255,255,255,0.8);" class="font-light italic mb-8 leading-relaxed">
-                            "They did an amazing job installing ambient lighting in my car. The work was clean, professional, and looks completely factory-installed. The lighting looks incredible at night. Great customer service and attention to detail, highly recommend!"
+                        <p style="color:rgba(255,255,255,0.4);" class="max-w-sm font-light">
+                            Whether you drive a Honda Civic or a Corvette, we'll make it look exactly the way you want
+                            it. Quality work on every car that rolls through our doors.
                         </p>
-                        <div class="flex items-center gap-4">
-                            <div style="width:2.5rem; height:2.5rem; background:rgba(255,255,255,0.1);" class="rounded-full"></div>
-                            <div>
-                                <div class="font-bold text-sm tracking-widest uppercase">Angel D.</div>
-                                <div class="text-xs" style="color:rgba(255,255,255,0.4);">Ambient Lighting — Honda Civic · Yelp</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Review 2: Don C. - Yelp -->
-                    <div class="bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:-translate-y-2 transition-transform duration-300 cursor-default">
-                        <div class="flex text-blue-500 mb-4 space-x-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <p style="color:rgba(255,255,255,0.8);" class="font-light italic mb-8 leading-relaxed">
-                            "If you want the best quality work, from full car wraps, best starlights, windows tinted, then pull up. There is no limit to what they can do. They treat your car like it's their own. Top notch customer service and the highest quality work."
-                        </p>
-                        <div class="flex items-center gap-4">
-                            <div style="width:2.5rem; height:2.5rem; background:rgba(255,255,255,0.1);" class="rounded-full"></div>
-                            <div>
-                                <div class="font-bold text-sm tracking-widest uppercase">Don C.</div>
-                                <div class="text-xs" style="color:rgba(255,255,255,0.4);">Full Service · Yelp</div>
-                            </div>
-                        </div>
                     </div>
 
-                    <!-- Review 3: Gizelle M. - Yelp -->
-                    <div class="bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:-translate-y-2 transition-transform duration-300 cursor-default">
-                        <div class="flex text-blue-500 mb-4 space-x-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <p style="color:rgba(255,255,255,0.8);" class="font-light italic mb-8 leading-relaxed">
-                            "Did my starlights fast and they look amazing! They can connect to my phone and have a controller as well. Multiple settings and colors, this is the place to get them done. Affordable and great customer service!"
-                        </p>
-                        <div class="flex items-center gap-4">
-                            <div style="width:2.5rem; height:2.5rem; background:rgba(255,255,255,0.1);" class="rounded-full"></div>
-                            <div>
-                                <div class="font-bold text-sm tracking-widest uppercase">Gizelle M.</div>
-                                <div class="text-xs" style="color:rgba(255,255,255,0.4);">Starlight Headliner · Yelp</div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8" style="max-width:100%;">
+                        <!-- Car Wraps -->
+                        <div class="group relative rounded-3xl overflow-hidden glass-card cursor-pointer hover:-translate-y-2 transition-transform duration-300"
+                            style="height:420px;">
+                            <img loading="lazy" src="car-wrap.png" alt="Custom Vinyl Car Wrap by Coronas Customz"
+                                class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0"
+                                style="background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.2), transparent);">
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <div style="width:3rem; height:3rem;"
+                                    class="rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" class="text-white" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-3 tracking-tight">Car Wraps</h3>
+                                <p style="color:rgba(255,255,255,0.6);" class="font-light leading-relaxed mb-6">
+                                    Full and partial vinyl wraps to completely change the look of your car. We use
+                                    quality films so it looks clean and lasts.
+                                </p>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Review 4: Londra H. - Yelp -->
-                    <div class="bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:-translate-y-2 transition-transform duration-300 cursor-default">
-                        <div class="flex text-blue-500 mb-4 space-x-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <!-- Starlight Headliner -->
+                        <div class="group relative rounded-3xl overflow-hidden glass-card cursor-pointer hover:-translate-y-2 transition-transform duration-300"
+                            style="height:420px;">
+                            <img loading="lazy" src="starlight-headliner.png"
+                                alt="Starlight Headliner Installation by Coronas Customz"
+                                class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0"
+                                style="background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.2), transparent);">
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <div style="width:3rem; height:3rem;"
+                                    class="rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" class="text-white" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-3 tracking-tight">Starlight Headliner</h3>
+                                <p style="color:rgba(255,255,255,0.6);" class="font-light leading-relaxed mb-6">
+                                    Fiber optic star ceilings you can control from your phone. Multiple colors and
+                                    settings — everyone who sees it wants one.
+                                </p>
+                            </div>
                         </div>
-                        <p style="color:rgba(255,255,255,0.8);" class="font-light italic mb-8 leading-relaxed">
-                            "Had my Corolla wrapped in pink here and it came out amazing! 10/10 would recommend to anyone looking to get their car wrapped. Very nice quality work and extremely attentive individuals! Bring your cars here :)"
-                        </p>
-                        <div class="flex items-center gap-4">
-                            <div style="width:2.5rem; height:2.5rem; background:rgba(255,255,255,0.1);" class="rounded-full"></div>
-                            <div>
-                                <div class="font-bold text-sm tracking-widest uppercase">Londra H.</div>
-                                <div class="text-xs" style="color:rgba(255,255,255,0.4);">Full Car Wrap — Toyota Corolla · Yelp</div>
+
+                        <!-- Chrome Deletes -->
+                        <div class="group relative rounded-3xl overflow-hidden glass-card cursor-pointer hover:-translate-y-2 transition-transform duration-300"
+                            style="height:420px;">
+                            <img loading="lazy" src="chrome-delete.png" alt="Chrome Delete Service by Coronas Customz"
+                                class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0"
+                                style="background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.2), transparent);">
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <div style="width:3rem; height:3rem;"
+                                    class="rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" class="text-white" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 6.5 2a1 1 0 0 1 1 1z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-3 tracking-tight">Chrome Deletes</h3>
+                                <p style="color:rgba(255,255,255,0.6);" class="font-light leading-relaxed mb-6">
+                                    Black out your chrome trim for a clean, blacked-out look. Window trim, badges,
+                                    handles — it all gets the stealth treatment.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Ambient Lighting -->
+                        <div class="group relative rounded-3xl overflow-hidden glass-card cursor-pointer hover:-translate-y-2 transition-transform duration-300"
+                            style="height:420px;">
+                            <img loading="lazy" src="ambient-lighting.png"
+                                alt="Ambient Interior Lighting by Coronas Customz"
+                                class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0"
+                                style="background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.2), transparent);">
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <div style="width:3rem; height:3rem;"
+                                    class="rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" class="text-white" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <line x1="12" y1="16" x2="12" y2="12" />
+                                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-3 tracking-tight">Ambient Lighting</h3>
+                                <p style="color:rgba(255,255,255,0.6);" class="font-light leading-relaxed mb-6">
+                                    Custom LED lighting along your doors, dash, and footwells. Clean install that looks
+                                    factory — and incredible at night.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- 3-STEP LEAD FUNNEL -->
-        <section id="contact" class="py-32 px-6 z-10 relative">
-            <div class="max-w-4xl mx-auto">
-                <!-- Section Header -->
-                <div class="text-center mb-12">
-                    <h2 class="text-5xl md:text-7xl font-light tracking-tighter mb-4">GET YOUR <span class="italic font-serif text-blue-500">QUOTE</span></h2>
-                    <p style="color:rgba(255,255,255,0.5);" class="text-lg font-light max-w-lg mx-auto">Three quick steps. No pressure, no obligations.</p>
-                </div>
+            </section>
 
-                <!-- Step Progress Bar -->
-                <div class="flex items-center justify-center gap-2 mb-12" id="step-progress">
-                    <div class="flex items-center gap-2">
-                        <div id="dot-1" style="width:2.5rem; height:2.5rem; background:#2563eb; border:2px solid #2563eb;" class="rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300">1</div>
-                        <span id="label-1" class="text-sm font-bold uppercase tracking-widest hidden md:inline" style="color:#2563eb;">Service</span>
+            <!-- INTERACTIVE GALLERY (Before/After Slider) -->
+            <section id="gallery" class="py-32 px-6 scroll-mt-24 z-10 relative">
+                <div class="max-w-6xl mx-auto text-white overflow-hidden"
+                    style="background:#0a0a0a; border-radius:60px; border:1px solid rgba(255,255,255,0.05); box-shadow:0 0 60px rgba(37,99,235,0.05); padding:5rem 1.5rem;">
+                    <div class="text-center mb-16">
+                        <span style="font-size:10px; letter-spacing:0.4em; color:#3b82f6;"
+                            class="uppercase font-bold mb-4 block">Real Results</span>
+                        <h2 class="text-5xl md:text-7xl font-light tracking-tighter mb-6">SEE THE <span
+                                class="italic font-serif">DIFFERENCE</span></h2>
+                        <p style="color:rgba(255,255,255,0.6);" class="max-w-xl mx-auto font-light text-lg">
+                            Slide to see the before and after. Same car, completely different vibe.
+                        </p>
                     </div>
-                    <div id="line-1" style="width:4rem; height:2px; background:rgba(255,255,255,0.1);" class="transition-all duration-500"></div>
-                    <div class="flex items-center gap-2">
-                        <div id="dot-2" style="width:2.5rem; height:2.5rem; background:transparent; border:2px solid rgba(255,255,255,0.2);" class="rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300" >2</div>
-                        <span id="label-2" class="text-sm font-bold uppercase tracking-widest hidden md:inline" style="color:rgba(255,255,255,0.3);">Vehicle</span>
-                    </div>
-                    <div id="line-2" style="width:4rem; height:2px; background:rgba(255,255,255,0.1);" class="transition-all duration-500"></div>
-                    <div class="flex items-center gap-2">
-                        <div id="dot-3" style="width:2.5rem; height:2.5rem; background:transparent; border:2px solid rgba(255,255,255,0.2);" class="rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300">3</div>
-                        <span id="label-3" class="text-sm font-bold uppercase tracking-widest hidden md:inline" style="color:rgba(255,255,255,0.3);">Contact</span>
-                    </div>
-                </div>
 
-                <!-- Funnel Card -->
-                <div class="glass-card relative overflow-hidden" style="border-radius:40px; border:1px solid rgba(255,255,255,0.1); box-shadow:0 25px 50px -12px rgba(0,0,0,0.25); min-height:380px;">
-                    <div class="absolute pointer-events-none" style="top:0; right:0; width:16rem; height:16rem; background:rgba(37,99,235,0.15); border-radius:50%; filter:blur(100px);"></div>
+                    <!-- Custom Slider Native HTML structure -->
+                    <div id="before-after-container"
+                        class="relative w-full aspect-video rounded-3xl overflow-hidden cursor-e-resize touch-none select-none max-w-5xl mx-auto group"
+                        style="border:1px solid #000;">
+                        <!-- After Image -->
+                        <img loading="lazy" src="gallery-after.jpg"
+                            alt="After - Pink Wrapped Chevy Malibu by Coronas Customz" draggable="false"
+                            class="absolute inset-0 w-full h-full object-cover"
+                            style="will-change: transform; transform: translateZ(0);">
+                        <div class="absolute px-4 py-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 font-bold uppercase tracking-widest text-xs z-10"
+                            style="top:1.5rem; right:1.5rem;">
+                            After
+                        </div>
 
-                    <!-- ====== STEP 1: Select Your Service ====== -->
-                    <div id="funnel-step-1" class="relative z-10 p-8 md:p-10" style="transition: opacity 0.4s ease, transform 0.4s ease;">
-                        <p class="text-center mb-8" style="color:rgba(255,255,255,0.5); font-size:0.875rem; letter-spacing:0.15em;" class="uppercase font-bold">WHAT ARE YOU LOOKING FOR?</p>
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3" id="service-picker">
-                            <!-- Service Option Cards -->
-                            <button type="button" data-service="wrap" class="service-option group flex flex-col items-center gap-3 p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-200 cursor-pointer text-center" onclick="selectService(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                                <span class="text-sm font-bold">Car Wrap</span>
-                            </button>
-                            <button type="button" data-service="starlight" class="service-option group flex flex-col items-center gap-3 p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-200 cursor-pointer text-center" onclick="selectService(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-                                <span class="text-sm font-bold">Starlight Headliner</span>
-                            </button>
-                            <button type="button" data-service="chrome" class="service-option group flex flex-col items-center gap-3 p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-200 cursor-pointer text-center" onclick="selectService(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 6.5 2a1 1 0 0 1 1 1z"/></svg>
-                                <span class="text-sm font-bold">Chrome Delete</span>
-                            </button>
-                            <button type="button" data-service="ambient" class="service-option group flex flex-col items-center gap-3 p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-200 cursor-pointer text-center" onclick="selectService(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                                <span class="text-sm font-bold">Ambient Lighting</span>
-                            </button>
-                            <button type="button" data-service="multiple" class="service-option group flex flex-col items-center gap-3 p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-200 cursor-pointer text-center md:col-span-1 col-span-2" onclick="selectService(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
-                                <span class="text-sm font-bold">Multiple Services</span>
-                            </button>
+                        <!-- Before Image Container -->
+                        <div id="before-image" class="absolute inset-0 w-full h-full"
+                            style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                            <img loading="lazy" src="gallery-before.jpg" alt="Before - White Chevy Malibu"
+                                draggable="false" class="absolute inset-0 w-full h-full object-cover"
+                                style="will-change: transform; transform: translateZ(0);">
+                            <div class="absolute px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 font-bold uppercase tracking-widest text-xs z-10"
+                                style="top:1.5rem; left:1.5rem;">
+                                Before
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Slider Line & Arrows -->
+                        <div id="slider-line" class="absolute top-0 bottom-0 z-20 pointer-events-none"
+                            style="width:2px; background:#2563eb; box-shadow:0 0 15px rgba(37,99,235,1); left:50%;">
+                            <div class="absolute bg-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                                style="top:50%; left:50%; transform:translate(-50%,-50%); width:2.5rem; height:2.5rem; box-shadow:0 0 20px rgba(37,99,235,0.5);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-white">
+                                    <path d="M5 12h14" />
+                                    <path d="m12 5 7 7-7 7" />
+                                </svg>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <!-- ====== STEP 2: Vehicle Info ====== -->
-                    <div id="funnel-step-2" class="relative z-10 p-8 md:p-10 hidden" style="opacity:0; transform:translateX(30px); transition: opacity 0.4s ease, transform 0.4s ease;">
-                        <p class="text-center mb-2 font-bold uppercase tracking-widest text-sm" style="color:rgba(255,255,255,0.5);">TELL US ABOUT YOUR RIDE</p>
-                        <p class="text-center mb-8 text-sm" style="color:rgba(255,255,255,0.3);">Selected: <span id="selected-service-label" class="text-blue-400 font-bold">—</span></p>
+            <!-- PROCESS -->
+            <section id="process" class="py-32 px-6 scroll-mt-24 z-10 relative">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-24">
+                        <span style="font-size:10px; letter-spacing:0.4em; color:rgba(255,255,255,0.4);"
+                            class="uppercase font-bold mb-4 block">How It Works</span>
+                        <h2 class="text-5xl md:text-7xl font-light tracking-tighter mb-6">SIMPLE <span
+                                class="italic font-serif">PROCESS</span></h2>
+                    </div>
 
-                        <div class="space-y-4 max-w-md mx-auto">
-                            <div class="grid grid-cols-3 gap-3">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        <div
+                            class="glass-card p-8 rounded-3xl relative overflow-hidden group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                            <div
+                                class="text-6xl font-bold text-white/5 mb-6 group-hover:text-blue-500/20 transition-colors duration-500">
+                                01</div>
+                            <h3 class="text-2xl font-bold mb-4 tracking-tight">Tell Us What You Want</h3>
+                            <p class="text-white/50 font-light leading-relaxed text-sm">Show us your ideas, pick your
+                                colors, and we'll figure out the best way to make it happen.</p>
+                            <div class="absolute top-0 left-0 w-full"
+                                style="height:2px; background:linear-gradient(to right, #2563eb, transparent); transform:scaleX(0); transform-origin:left; transition:transform 0.5s;">
+                            </div>
+                        </div>
+                        <div
+                            class="glass-card p-8 rounded-3xl relative overflow-hidden group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                            <div
+                                class="text-6xl font-bold text-white/5 mb-6 group-hover:text-blue-500/20 transition-colors duration-500">
+                                02</div>
+                            <h3 class="text-2xl font-bold mb-4 tracking-tight">Prep Work</h3>
+                            <p class="text-white/50 font-light leading-relaxed text-sm">A clean surface means a clean
+                                result. We fully prep your car before any work starts.</p>
+                            <div class="absolute top-0 left-0 w-full"
+                                style="height:2px; background:linear-gradient(to right, #2563eb, transparent); transform:scaleX(0); transform-origin:left; transition:transform 0.5s;">
+                            </div>
+                        </div>
+                        <div
+                            class="glass-card p-8 rounded-3xl relative overflow-hidden group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                            <div
+                                class="text-6xl font-bold text-white/5 mb-6 group-hover:text-blue-500/20 transition-colors duration-500">
+                                03</div>
+                            <h3 class="text-2xl font-bold mb-4 tracking-tight">We Get To Work</h3>
+                            <p class="text-white/50 font-light leading-relaxed text-sm">Our team handles every edge and
+                                detail with care. No shortcuts, no rushing.</p>
+                            <div class="absolute top-0 left-0 w-full"
+                                style="height:2px; background:linear-gradient(to right, #2563eb, transparent); transform:scaleX(0); transform-origin:left; transition:transform 0.5s;">
+                            </div>
+                        </div>
+                        <div
+                            class="glass-card p-8 rounded-3xl relative overflow-hidden group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                            <div
+                                class="text-6xl font-bold text-white/5 mb-6 group-hover:text-blue-500/20 transition-colors duration-500">
+                                04</div>
+                            <h3 class="text-2xl font-bold mb-4 tracking-tight">The Reveal</h3>
+                            <p class="text-white/50 font-light leading-relaxed text-sm">We check everything before you
+                                pick it up. Drive off knowing it's done right.</p>
+                            <div class="absolute top-0 left-0 w-full"
+                                style="height:2px; background:linear-gradient(to right, #2563eb, transparent); transform:scaleX(0); transform-origin:left; transition:transform 0.5s;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="reviews" class="py-32 px-6 scroll-mt-24 z-10 relative">
+                <div class="max-w-6xl mx-auto text-center bg-white/5 py-24 px-6 relative overflow-hidden"
+                    style="border-radius:60px; border:1px solid rgba(255,255,255,0.05);">
+                    <span style="font-size:10px; letter-spacing:0.4em; color:#3b82f6;"
+                        class="uppercase font-bold mb-4 block relative z-10">Real Reviews</span>
+                    <h2 class="text-4xl md:text-6xl font-light tracking-tighter mb-16 relative z-10">WHAT OUR <span
+                            class="italic font-serif">CLIENTS</span> SAY</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left relative z-10" style="max-width:100%;">
+                        <!-- Review 1: Angel D. - Yelp -->
+                        <div
+                            class="bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:-translate-y-2 transition-transform duration-300 cursor-default">
+                            <div class="flex text-blue-500 mb-4 space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                            </div>
+                            <p style="color:rgba(255,255,255,0.8);" class="font-light italic mb-8 leading-relaxed">
+                                "They did an amazing job installing ambient lighting in my car. The work was clean,
+                                professional, and looks completely factory-installed. The lighting looks incredible at
+                                night. Great customer service and attention to detail, highly recommend!"
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div style="width:2.5rem; height:2.5rem; background:rgba(255,255,255,0.1);"
+                                    class="rounded-full"></div>
                                 <div>
-                                    <label class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Year</label>
-                                    <input type="text" id="f-year" placeholder="2022" maxlength="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-center" />
+                                    <div class="font-bold text-sm tracking-widest uppercase">Angel D.</div>
+                                    <div class="text-xs" style="color:rgba(255,255,255,0.4);">Ambient Lighting — Honda
+                                        Civic · Yelp</div>
                                 </div>
-                                <div class="col-span-2">
-                                    <label class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Make</label>
-                                    <select id="f-make" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer">
-                                        <option value="" class="bg-black">Select Make</option>
-                                        <option value="Acura" class="bg-black">Acura</option>
-                                        <option value="Audi" class="bg-black">Audi</option>
-                                        <option value="BMW" class="bg-black">BMW</option>
-                                        <option value="Buick" class="bg-black">Buick</option>
-                                        <option value="Cadillac" class="bg-black">Cadillac</option>
-                                        <option value="Chevrolet" class="bg-black">Chevrolet</option>
-                                        <option value="Chrysler" class="bg-black">Chrysler</option>
-                                        <option value="Dodge / Ram" class="bg-black">Dodge / Ram</option>
-                                        <option value="Ford" class="bg-black">Ford</option>
-                                        <option value="GMC" class="bg-black">GMC</option>
-                                        <option value="Honda" class="bg-black">Honda</option>
-                                        <option value="Hyundai" class="bg-black">Hyundai</option>
-                                        <option value="Infiniti" class="bg-black">Infiniti</option>
-                                        <option value="Jeep" class="bg-black">Jeep</option>
-                                        <option value="Kia" class="bg-black">Kia</option>
-                                        <option value="Lexus" class="bg-black">Lexus</option>
-                                        <option value="Mazda" class="bg-black">Mazda</option>
-                                        <option value="Mercedes-Benz" class="bg-black">Mercedes-Benz</option>
-                                        <option value="Mitsubishi" class="bg-black">Mitsubishi</option>
-                                        <option value="Nissan" class="bg-black">Nissan</option>
-                                        <option value="Porsche" class="bg-black">Porsche</option>
-                                        <option value="Subaru" class="bg-black">Subaru</option>
-                                        <option value="Tesla" class="bg-black">Tesla</option>
-                                        <option value="Toyota" class="bg-black">Toyota</option>
-                                        <option value="Volkswagen" class="bg-black">Volkswagen</option>
-                                        <option value="Other" class="bg-black">Other</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Model</label>
-                                <input type="text" id="f-model" placeholder="e.g. Camry, Civic, Mustang" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
                             </div>
                         </div>
 
-                        <div class="flex gap-3 mt-8 max-w-md mx-auto">
-                            <button type="button" onclick="goToStep(1)" class="px-6 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold uppercase tracking-widest hover:bg-white/10 active:scale-95 transition-all duration-200 cursor-pointer" style="flex-shrink:0;">
-                                ← Back
-                            </button>
-                            <button type="button" onclick="goToStep(3)" class="w-full py-4 rounded-full bg-blue-600 text-white font-bold uppercase tracking-widest hover:bg-blue-500 active:scale-95 transition-all duration-200 cursor-pointer border-none outline-none">
-                                Continue →
-                            </button>
+                        <!-- Review 2: Don C. - Yelp -->
+                        <div
+                            class="bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:-translate-y-2 transition-transform duration-300 cursor-default">
+                            <div class="flex text-blue-500 mb-4 space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                            </div>
+                            <p style="color:rgba(255,255,255,0.8);" class="font-light italic mb-8 leading-relaxed">
+                                "If you want the best quality work, from full car wraps, best starlights, windows
+                                tinted, then pull up. There is no limit to what they can do. They treat your car like
+                                it's their own. Top notch customer service and the highest quality work."
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div style="width:2.5rem; height:2.5rem; background:rgba(255,255,255,0.1);"
+                                    class="rounded-full"></div>
+                                <div>
+                                    <div class="font-bold text-sm tracking-widest uppercase">Don C.</div>
+                                    <div class="text-xs" style="color:rgba(255,255,255,0.4);">Full Service · Yelp</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 3: Gizelle M. - Yelp -->
+                        <div
+                            class="bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:-translate-y-2 transition-transform duration-300 cursor-default">
+                            <div class="flex text-blue-500 mb-4 space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                            </div>
+                            <p style="color:rgba(255,255,255,0.8);" class="font-light italic mb-8 leading-relaxed">
+                                "Did my starlights fast and they look amazing! They can connect to my phone and have a
+                                controller as well. Multiple settings and colors, this is the place to get them done.
+                                Affordable and great customer service!"
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div style="width:2.5rem; height:2.5rem; background:rgba(255,255,255,0.1);"
+                                    class="rounded-full"></div>
+                                <div>
+                                    <div class="font-bold text-sm tracking-widest uppercase">Gizelle M.</div>
+                                    <div class="text-xs" style="color:rgba(255,255,255,0.4);">Starlight Headliner · Yelp
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 4: Londra H. - Yelp -->
+                        <div
+                            class="bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:-translate-y-2 transition-transform duration-300 cursor-default">
+                            <div class="flex text-blue-500 mb-4 space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                            </div>
+                            <p style="color:rgba(255,255,255,0.8);" class="font-light italic mb-8 leading-relaxed">
+                                "Had my Corolla wrapped in pink here and it came out amazing! 10/10 would recommend to
+                                anyone looking to get their car wrapped. Very nice quality work and extremely attentive
+                                individuals! Bring your cars here :)"
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div style="width:2.5rem; height:2.5rem; background:rgba(255,255,255,0.1);"
+                                    class="rounded-full"></div>
+                                <div>
+                                    <div class="font-bold text-sm tracking-widest uppercase">Londra H.</div>
+                                    <div class="text-xs" style="color:rgba(255,255,255,0.4);">Full Car Wrap — Toyota
+                                        Corolla · Yelp</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 3-STEP LEAD FUNNEL -->
+            <section id="contact" class="py-32 px-6 z-10 relative">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Section Header -->
+                    <div class="text-center mb-12">
+                        <h2 class="text-5xl md:text-7xl font-light tracking-tighter mb-4">GET YOUR <span
+                                class="italic font-serif text-blue-500">QUOTE</span></h2>
+                        <p style="color:rgba(255,255,255,0.5);" class="text-lg font-light max-w-lg mx-auto">Three quick
+                            steps. No pressure, no obligations.</p>
+                    </div>
+
+                    <!-- Step Progress Bar -->
+                    <div class="flex items-center justify-center gap-2 mb-12" id="step-progress">
+                        <div class="flex items-center gap-2">
+                            <div id="dot-1"
+                                style="width:2.5rem; height:2.5rem; background:#2563eb; border:2px solid #2563eb;"
+                                class="rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300">
+                                1</div>
+                            <span id="label-1" class="text-sm font-bold uppercase tracking-widest hidden md:inline"
+                                style="color:#2563eb;">Service</span>
+                        </div>
+                        <div id="line-1" style="width:4rem; height:2px; background:rgba(255,255,255,0.1);"
+                            class="transition-all duration-500"></div>
+                        <div class="flex items-center gap-2">
+                            <div id="dot-2"
+                                style="width:2.5rem; height:2.5rem; background:transparent; border:2px solid rgba(255,255,255,0.2);"
+                                class="rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300">
+                                2</div>
+                            <span id="label-2" class="text-sm font-bold uppercase tracking-widest hidden md:inline"
+                                style="color:rgba(255,255,255,0.3);">Vehicle</span>
+                        </div>
+                        <div id="line-2" style="width:4rem; height:2px; background:rgba(255,255,255,0.1);"
+                            class="transition-all duration-500"></div>
+                        <div class="flex items-center gap-2">
+                            <div id="dot-3"
+                                style="width:2.5rem; height:2.5rem; background:transparent; border:2px solid rgba(255,255,255,0.2);"
+                                class="rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300">
+                                3</div>
+                            <span id="label-3" class="text-sm font-bold uppercase tracking-widest hidden md:inline"
+                                style="color:rgba(255,255,255,0.3);">Contact</span>
                         </div>
                     </div>
 
-                    <!-- ====== STEP 3: Contact Info + CTA ====== -->
-                    <div id="funnel-step-3" class="relative z-10 p-8 md:p-10 hidden" style="opacity:0; transform:translateX(30px); transition: opacity 0.4s ease, transform 0.4s ease;">
-                        <p class="text-center mb-2 font-bold uppercase tracking-widest text-sm" style="color:rgba(255,255,255,0.5);">ALMOST THERE — HOW DO WE REACH YOU?</p>
-                        <p class="text-center mb-8 text-sm" style="color:rgba(255,255,255,0.3);">
-                            <span id="summary-service" class="text-blue-400 font-bold">—</span> · <span id="summary-vehicle" class="text-white/60">—</span>
-                        </p>
+                    <!-- Funnel Card -->
+                    <div class="glass-card relative overflow-hidden"
+                        style="border-radius:40px; border:1px solid rgba(255,255,255,0.1); box-shadow:0 25px 50px -12px rgba(0,0,0,0.25); min-height:380px;">
+                        <div class="absolute pointer-events-none"
+                            style="top:0; right:0; width:16rem; height:16rem; background:rgba(37,99,235,0.15); border-radius:50%; filter:blur(100px);">
+                        </div>
 
-                        <form action="#" method="POST" class="space-y-4 max-w-md mx-auto" id="quote-form">
-                            <div>
-                                <label class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Full Name</label>
-                                <input type="text" id="f-name" name="full_name" placeholder="Your name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
+                        <!-- ====== STEP 1: Select Your Service ====== -->
+                        <div id="funnel-step-1" class="relative z-10 p-8 md:p-10"
+                            style="transition: opacity 0.4s ease, transform 0.4s ease;">
+                            <p class="text-center mb-8"
+                                style="color:rgba(255,255,255,0.5); font-size:0.875rem; letter-spacing:0.15em;"
+                                class="uppercase font-bold">WHAT ARE YOU LOOKING FOR?</p>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-3" id="service-picker">
+                                <!-- Service Option Cards -->
+                                <button type="button" data-service="wrap"
+                                    class="service-option group flex flex-col items-center gap-3 p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-200 cursor-pointer text-center"
+                                    onclick="selectService(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" class="text-blue-400">
+                                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                    </svg>
+                                    <span class="text-sm font-bold">Car Wrap</span>
+                                </button>
+                                <button type="button" data-service="starlight"
+                                    class="service-option group flex flex-col items-center gap-3 p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-200 cursor-pointer text-center"
+                                    onclick="selectService(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" class="text-blue-400">
+                                        <path
+                                            d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                                    </svg>
+                                    <span class="text-sm font-bold">Starlight Headliner</span>
+                                </button>
+                                <button type="button" data-service="chrome"
+                                    class="service-option group flex flex-col items-center gap-3 p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-200 cursor-pointer text-center"
+                                    onclick="selectService(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" class="text-blue-400">
+                                        <path
+                                            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 6.5 2a1 1 0 0 1 1 1z" />
+                                    </svg>
+                                    <span class="text-sm font-bold">Chrome Delete</span>
+                                </button>
+                                <button type="button" data-service="ambient"
+                                    class="service-option group flex flex-col items-center gap-3 p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-200 cursor-pointer text-center"
+                                    onclick="selectService(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" class="text-blue-400">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <line x1="12" y1="16" x2="12" y2="12" />
+                                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                                    </svg>
+                                    <span class="text-sm font-bold">Ambient Lighting</span>
+                                </button>
+                                <button type="button" data-service="multiple"
+                                    class="service-option group flex flex-col items-center gap-3 p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-200 cursor-pointer text-center md:col-span-1 col-span-2"
+                                    onclick="selectService(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" class="text-blue-400">
+                                        <rect width="7" height="7" x="3" y="3" rx="1" />
+                                        <rect width="7" height="7" x="14" y="3" rx="1" />
+                                        <rect width="7" height="7" x="14" y="14" rx="1" />
+                                        <rect width="7" height="7" x="3" y="14" rx="1" />
+                                    </svg>
+                                    <span class="text-sm font-bold">Multiple Services</span>
+                                </button>
                             </div>
-                            <div>
-                                <label class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Email Address</label>
-                                <input type="email" id="f-email" name="email" placeholder="name@email.com" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
-                            </div>
-                            <div>
-                                <label class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Phone Number</label>
-                                <input type="tel" id="f-phone" name="phone" placeholder="(559) 000-0000" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
+                        </div>
+
+                        <!-- ====== STEP 2: Vehicle Info ====== -->
+                        <div id="funnel-step-2" class="relative z-10 p-8 md:p-10 hidden"
+                            style="opacity:0; transform:translateX(30px); transition: opacity 0.4s ease, transform 0.4s ease;">
+                            <p class="text-center mb-2 font-bold uppercase tracking-widest text-sm"
+                                style="color:rgba(255,255,255,0.5);">TELL US ABOUT YOUR RIDE</p>
+                            <p class="text-center mb-8 text-sm" style="color:rgba(255,255,255,0.3);">Selected: <span
+                                    id="selected-service-label" class="text-blue-400 font-bold">—</span></p>
+
+                            <div class="space-y-4 max-w-md mx-auto">
+                                <div class="grid grid-cols-3 gap-3">
+                                    <div>
+                                        <label
+                                            class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Year</label>
+                                        <input type="text" id="f-year" placeholder="2022" maxlength="4"
+                                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-center" />
+                                    </div>
+                                    <div class="col-span-2">
+                                        <label
+                                            class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Make</label>
+                                        <select id="f-make"
+                                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer">
+                                            <option value="" class="bg-black">Select Make</option>
+                                            <option value="Acura" class="bg-black">Acura</option>
+                                            <option value="Audi" class="bg-black">Audi</option>
+                                            <option value="BMW" class="bg-black">BMW</option>
+                                            <option value="Buick" class="bg-black">Buick</option>
+                                            <option value="Cadillac" class="bg-black">Cadillac</option>
+                                            <option value="Chevrolet" class="bg-black">Chevrolet</option>
+                                            <option value="Chrysler" class="bg-black">Chrysler</option>
+                                            <option value="Dodge / Ram" class="bg-black">Dodge / Ram</option>
+                                            <option value="Ford" class="bg-black">Ford</option>
+                                            <option value="GMC" class="bg-black">GMC</option>
+                                            <option value="Honda" class="bg-black">Honda</option>
+                                            <option value="Hyundai" class="bg-black">Hyundai</option>
+                                            <option value="Infiniti" class="bg-black">Infiniti</option>
+                                            <option value="Jeep" class="bg-black">Jeep</option>
+                                            <option value="Kia" class="bg-black">Kia</option>
+                                            <option value="Lexus" class="bg-black">Lexus</option>
+                                            <option value="Mazda" class="bg-black">Mazda</option>
+                                            <option value="Mercedes-Benz" class="bg-black">Mercedes-Benz</option>
+                                            <option value="Mitsubishi" class="bg-black">Mitsubishi</option>
+                                            <option value="Nissan" class="bg-black">Nissan</option>
+                                            <option value="Porsche" class="bg-black">Porsche</option>
+                                            <option value="Subaru" class="bg-black">Subaru</option>
+                                            <option value="Tesla" class="bg-black">Tesla</option>
+                                            <option value="Toyota" class="bg-black">Toyota</option>
+                                            <option value="Volkswagen" class="bg-black">Volkswagen</option>
+                                            <option value="Other" class="bg-black">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label
+                                        class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Model</label>
+                                    <input type="text" id="f-model" placeholder="e.g. Camry, Civic, Mustang"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
+                                </div>
                             </div>
 
-                            <div class="flex gap-3 mt-6">
-                                <button type="button" onclick="goToStep(2)" class="px-6 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold uppercase tracking-widest hover:bg-white/10 active:scale-95 transition-all duration-200 cursor-pointer" style="flex-shrink:0;">
+                            <div class="flex gap-3 mt-8 max-w-md mx-auto">
+                                <button type="button" onclick="goToStep(1)"
+                                    class="px-6 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold uppercase tracking-widest hover:bg-white/10 active:scale-95 transition-all duration-200 cursor-pointer"
+                                    style="flex-shrink:0;">
                                     ← Back
                                 </button>
-                                <button type="submit" class="w-full py-4 rounded-full bg-blue-600 text-white font-bold uppercase tracking-widest hover:bg-blue-500 active:scale-95 transition-all duration-200 cursor-pointer border-none outline-none" style="box-shadow:0 0 25px rgba(37,99,235,0.4);">
-                                    🚗 Get My Custom Quote
+                                <button type="button" onclick="goToStep(3)"
+                                    class="w-full py-4 rounded-full bg-blue-600 text-white font-bold uppercase tracking-widest hover:bg-blue-500 active:scale-95 transition-all duration-200 cursor-pointer border-none outline-none">
+                                    Continue →
                                 </button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
 
-                    <!-- ====== SUCCESS STATE ====== -->
-                    <div id="funnel-success" class="relative z-10 p-8 md:p-10 hidden text-center" style="opacity:0; transition: opacity 0.5s ease;">
-                        <div style="font-size:4rem;" class="mb-4">🎉</div>
-                        <h3 class="text-3xl font-bold tracking-tight mb-3">You're All Set!</h3>
-                        <p style="color:rgba(255,255,255,0.6);" class="font-light mb-6 max-w-sm mx-auto">We've got your info. Our team will get back to you with a custom quote within 24 hours.</p>
-                        <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-500/20 border border-green-500/30 text-green-400 text-sm font-bold">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Quote Request Sent
+                        <!-- ====== STEP 3: Contact Info + CTA ====== -->
+                        <div id="funnel-step-3" class="relative z-10 p-8 md:p-10 hidden"
+                            style="opacity:0; transform:translateX(30px); transition: opacity 0.4s ease, transform 0.4s ease;">
+                            <p class="text-center mb-2 font-bold uppercase tracking-widest text-sm"
+                                style="color:rgba(255,255,255,0.5);">ALMOST THERE — HOW DO WE REACH YOU?</p>
+                            <p class="text-center mb-8 text-sm" style="color:rgba(255,255,255,0.3);">
+                                <span id="summary-service" class="text-blue-400 font-bold">—</span> · <span
+                                    id="summary-vehicle" class="text-white/60">—</span>
+                            </p>
+
+                            <form action="#" method="POST" class="space-y-4 max-w-md mx-auto" id="quote-form">
+                                <div>
+                                    <label
+                                        class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Full
+                                        Name</label>
+                                    <input type="text" id="f-name" name="full_name" placeholder="Your name" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
+                                </div>
+                                <div>
+                                    <label
+                                        class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Email
+                                        Address</label>
+                                    <input type="email" id="f-email" name="email" placeholder="name@email.com" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
+                                </div>
+                                <div>
+                                    <label
+                                        class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Phone
+                                        Number</label>
+                                    <input type="tel" id="f-phone" name="phone" placeholder="(559) 000-0000" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
+                                </div>
+
+                                <div class="flex gap-3 mt-6">
+                                    <button type="button" onclick="goToStep(2)"
+                                        class="px-6 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold uppercase tracking-widest hover:bg-white/10 active:scale-95 transition-all duration-200 cursor-pointer"
+                                        style="flex-shrink:0;">
+                                        ← Back
+                                    </button>
+                                    <button type="submit"
+                                        class="w-full py-4 rounded-full bg-blue-600 text-white font-bold uppercase tracking-widest hover:bg-blue-500 active:scale-95 transition-all duration-200 cursor-pointer border-none outline-none"
+                                        style="box-shadow:0 0 25px rgba(37,99,235,0.4);">
+                                        🚗 Get My Custom Quote
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- ====== SUCCESS STATE ====== -->
+                        <div id="funnel-success" class="relative z-10 p-8 md:p-10 hidden text-center"
+                            style="opacity:0; transition: opacity 0.5s ease;">
+                            <div style="font-size:4rem;" class="mb-4">🎉</div>
+                            <h3 class="text-3xl font-bold tracking-tight mb-3">You're All Set!</h3>
+                            <p style="color:rgba(255,255,255,0.6);" class="font-light mb-6 max-w-sm mx-auto">We've got
+                                your info. Our team will get back to you with a custom quote within 24 hours.</p>
+                            <div
+                                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-500/20 border border-green-500/30 text-green-400 text-sm font-bold">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Quote Request Sent
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Trust badges under the funnel -->
+                    <div class="flex flex-wrap items-center justify-center gap-6 mt-10"
+                        style="color:rgba(255,255,255,0.35); font-size:0.8rem;">
+                        <span class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            5-star rated on Yelp & Google
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 6.5 2a1 1 0 0 1 1 1z" />
+                            </svg>
+                            We stand behind our work
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg>
+                            Free quote, no obligations
+                        </span>
+                    </div>
                 </div>
+            </section>
+        </main>
 
-                <!-- Trust badges under the funnel -->
-                <div class="flex flex-wrap items-center justify-center gap-6 mt-10" style="color:rgba(255,255,255,0.35); font-size:0.8rem;">
-                    <span class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        5-star rated on Yelp & Google
-                    </span>
-                    <span class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 6.5 2a1 1 0 0 1 1 1z"/></svg>
-                        We stand behind our work
-                    </span>
-                    <span class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                        Free quote, no obligations
-                    </span>
+        <!-- FOOTER -->
+        <footer class="border-t border-white/5 py-12 px-6 z-10 relative mt-20">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between opacity-60 text-sm">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="logo.png" alt="Coronas Customz Logo" class="h-8 object-contain"
+                        style="filter: invert(1) brightness(2);" />
                 </div>
+                <p>© 2026 Coronas Customz. All rights reserved.</p>
             </div>
-        </section>
-    </main>
+        </footer>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-white/5 py-12 px-6 z-10 relative mt-20">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between opacity-60 text-sm">
-            <div class="flex items-center mb-4 md:mb-0">
-                <img src="logo.png" alt="Coronas Customz Logo" class="h-8 object-contain" style="filter: invert(1) brightness(2);" />
-            </div>
-            <p>© 2026 Coronas Customz. All rights reserved.</p>
-        </div>
-    </footer>
+        <!-- STICKY CTA -->
+        <a href="#contact"
+            class="fixed z-50 px-8 py-4 rounded-full bg-blue-600 text-white font-bold uppercase tracking-tighter shadow-2xl hover:bg-blue-500 active:scale-95 transition-all duration-200 flex items-center gap-3 group cursor-pointer"
+            style="bottom:2rem; right:2rem; box-shadow:0 0 30px rgba(37,99,235,0.3); border:1px solid #2563eb;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="group-hover:rotate-12 transition-transform">
+                <path d="m11.3 15.3 4.2-4.2-4.2-4.2" />
+                <path d="M15 11H3" />
+                <path d="m11 20 8-8-8-8" />
+            </svg>
+            Get a Free Quote
+        </a>
 
-    <!-- STICKY CTA -->
-    <a href="#contact" class="fixed z-50 px-8 py-4 rounded-full bg-blue-600 text-white font-bold uppercase tracking-tighter shadow-2xl hover:bg-blue-500 active:scale-95 transition-all duration-200 flex items-center gap-3 group cursor-pointer" style="bottom:2rem; right:2rem; box-shadow:0 0 30px rgba(37,99,235,0.3); border:1px solid #2563eb;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:rotate-12 transition-transform"><path d="m11.3 15.3 4.2-4.2-4.2-4.2"/><path d="M15 11H3"/><path d="m11 20 8-8-8-8"/></svg>
-        Get a Free Quote
-    </a>
-
-    <!-- SCRIPTS -->
-    <script>
-        // FORCE SCROLL TO TOP on page load — fixes hash (#contact, #services) causing mid-page jumps on reload
-        if (window.location.hash) {
-            history.replaceState(null, '', window.location.pathname);
-        }
-        window.scrollTo(0, 0);
-
-        // Smooth scroll for anchor links WITHOUT persisting hash in URL
-        document.addEventListener('click', (e) => {
-            const anchor = e.target.closest('a[href^="#"]');
-            if (anchor) {
-                e.preventDefault();
-                const targetId = anchor.getAttribute('href').slice(1);
-                const target = document.getElementById(targetId);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Don't set hash — keeps URL clean so reloads go to top
-                }
+        <!-- SCRIPTS -->
+        <script>
+            // FORCE SCROLL TO TOP on page load — fixes hash (#contact, #services) causing mid-page jumps on reload
+            if (window.location.hash) {
+                history.replaceState(null, '', window.location.pathname);
             }
-        });
+            window.scrollTo(0, 0);
 
-        // Animations
-        window.addEventListener('scroll', () => {
+            // Smooth scroll for anchor links WITHOUT persisting hash in URL
+            document.addEventListener('click', (e) => {
+                const anchor = e.target.closest('a[href^="#"]');
+                if (anchor) {
+                    e.preventDefault();
+                    const targetId = anchor.getAttribute('href').slice(1);
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Don't set hash — keeps URL clean so reloads go to top
+                    }
+                }
+            });
+
+            // Animations
+            window.addEventListener('scroll', () => {
+                document.querySelectorAll('.fade-in-up').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+                        el.style.opacity = 1;
+                        el.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            // Setup initial state for animations
             document.querySelectorAll('.fade-in-up').forEach(el => {
-                if(el.getBoundingClientRect().top < window.innerHeight - 50) {
-                    el.style.opacity = 1;
-                    el.style.transform = 'translateY(0)';
-                }
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
             });
-        });
-        
-        // Setup initial state for animations
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            el.style.opacity = 0;
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-        });
 
-        // 1. Generate Ambient Background
-        const starsContainer = document.getElementById('starlight-bg');
-        for (let i = 0; i < 50; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.width = Math.random() * 3 + 'px';
-            star.style.height = star.style.width;
-            star.style.left = Math.random() * 100 + 'vw';
-            star.style.top = Math.random() * 100 + 'vh';
-            star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
-            star.style.setProperty('--delay', (Math.random() * 2) + 's');
-            starsContainer.appendChild(star);
-        }
-
-        // 2. Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-black/90', 'backdrop-blur-lg', 'border-b', 'border-white/5', 'shadow-2xl');
-                navbar.classList.remove('bg-transparent', 'py-8');
-                navbar.classList.add('py-4');
-            } else {
-                navbar.classList.remove('bg-black/90', 'backdrop-blur-lg', 'border-b', 'border-white/5', 'shadow-2xl');
-                navbar.classList.add('bg-transparent', 'py-8');
-                navbar.classList.remove('py-4');
-            }
-        });
-
-        // 3. Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const iconMenu = document.getElementById('icon-menu');
-        const iconClose = document.getElementById('icon-close');
-        
-        const toggleMenu = () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            if (isHidden) {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('flex');
-                setTimeout(() => {
-                    mobileMenu.classList.remove('opacity-0', 'translate-y-[-20px]', 'pointer-events-none');
-                }, 10);
-            } else {
-                mobileMenu.classList.add('opacity-0', 'translate-y-[-20px]', 'pointer-events-none');
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                }, 300); // Wait for transition
-            }
-            iconMenu.classList.toggle('hidden');
-            iconClose.classList.toggle('hidden');
-        };
-
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', toggleMenu);
-        });
-
-        // 4. Interactive Gallery (Before/After Slider)
-        const container = document.getElementById('before-after-container');
-        const beforeImage = document.getElementById('before-image');
-        const sliderLine = document.getElementById('slider-line');
-
-        const moveSlider = (clientX) => {
-            const rect = container.getBoundingClientRect();
-            let x = Math.max(0, Math.min(clientX - rect.left, rect.width));
-            let percentage = (x / rect.width) * 100;
-            
-            beforeImage.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
-            sliderLine.style.left = `${percentage}%`;
-        };
-
-        container.addEventListener('mousemove', (e) => moveSlider(e.clientX));
-        container.addEventListener('touchmove', (e) => {
-            // Prevent scrolling when using slider on mobile
-            if(e.cancelable) e.preventDefault();
-            moveSlider(e.touches[0].clientX);
-        }, { passive: false });
-
-        // 5. LEAD FUNNEL STEP LOGIC
-        let currentStep = 1;
-        let selectedService = '';
-        const serviceLabels = {
-            'wrap': 'Car Wrap',
-            'starlight': 'Starlight Headliner',
-            'chrome': 'Chrome Delete',
-            'ambient': 'Ambient Lighting',
-            'multiple': 'Multiple Services'
-        };
-
-        function selectService(btn) {
-            // Remove active state from all
-            document.querySelectorAll('.service-option').forEach(b => {
-                b.style.borderColor = 'rgba(255,255,255,0.1)';
-                b.style.background = 'rgba(255,255,255,0.05)';
-            });
-            // Set active on clicked
-            btn.style.borderColor = '#2563eb';
-            btn.style.background = 'rgba(37,99,235,0.15)';
-            selectedService = btn.dataset.service;
-            
-            // Auto-advance to step 2 after a brief visual cue
-            setTimeout(() => goToStep(2), 350);
-        }
-
-        function goToStep(step) {
-            const prev = document.getElementById('funnel-step-' + currentStep);
-            const next = document.getElementById('funnel-step-' + step);
-            if (!prev || !next) return;
-
-            // Update labels
-            if (step >= 2) {
-                document.getElementById('selected-service-label').textContent = serviceLabels[selectedService] || '—';
-            }
-            if (step >= 3) {
-                const year = document.getElementById('f-year').value;
-                const make = document.getElementById('f-make').value;
-                const model = document.getElementById('f-model').value;
-                document.getElementById('summary-service').textContent = serviceLabels[selectedService] || '—';
-                document.getElementById('summary-vehicle').textContent = [year, make, model].filter(Boolean).join(' ') || '—';
+            // 1. Generate Ambient Background
+            const starsContainer = document.getElementById('starlight-bg');
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+                star.style.setProperty('--delay', (Math.random() * 2) + 's');
+                starsContainer.appendChild(star);
             }
 
-            // Determine animation direction
-            const direction = step > currentStep ? 30 : -30;
-
-            // Fade out current
-            prev.style.opacity = '0';
-            prev.style.transform = `translateX(${-direction}px)`;
-
-            setTimeout(() => {
-                prev.classList.add('hidden');
-                next.classList.remove('hidden');
-                next.style.opacity = '0';
-                next.style.transform = `translateX(${direction}px)`;
-
-                // Force reflow
-                void next.offsetWidth;
-
-                next.style.opacity = '1';
-                next.style.transform = 'translateX(0)';
-                currentStep = step;
-                updateProgressBar(step);
-            }, 350);
-        }
-
-        function updateProgressBar(step) {
-            for (let i = 1; i <= 3; i++) {
-                const dot = document.getElementById('dot-' + i);
-                const label = document.getElementById('label-' + i);
-                if (i <= step) {
-                    dot.style.background = '#2563eb';
-                    dot.style.borderColor = '#2563eb';
-                    if (label) label.style.color = '#2563eb';
+            // 2. Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-black/90', 'backdrop-blur-lg', 'border-b', 'border-white/5', 'shadow-2xl');
+                    navbar.classList.remove('bg-transparent', 'py-8');
+                    navbar.classList.add('py-4');
                 } else {
-                    dot.style.background = 'transparent';
-                    dot.style.borderColor = 'rgba(255,255,255,0.2)';
-                    if (label) label.style.color = 'rgba(255,255,255,0.3)';
+                    navbar.classList.remove('bg-black/90', 'backdrop-blur-lg', 'border-b', 'border-white/5', 'shadow-2xl');
+                    navbar.classList.add('bg-transparent', 'py-8');
+                    navbar.classList.remove('py-4');
                 }
-            }
-            // Progress lines
-            const line1 = document.getElementById('line-1');
-            const line2 = document.getElementById('line-2');
-            line1.style.background = step >= 2 ? '#2563eb' : 'rgba(255,255,255,0.1)';
-            line2.style.background = step >= 3 ? '#2563eb' : 'rgba(255,255,255,0.1)';
-        }
+            });
 
-        // Form submit handler — sends to Go High Level webhook
-        const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/WUVAYLbNLTUKfH1ze9SV/webhook-trigger/1385a14c-93c3-4666-b284-07115f53ec24';
+            // 3. Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const iconMenu = document.getElementById('icon-menu');
+            const iconClose = document.getElementById('icon-close');
 
-        document.getElementById('quote-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Collect all funnel data
-            const payload = {
-                full_name: document.getElementById('f-name').value,
-                email: document.getElementById('f-email').value,
-                phone: document.getElementById('f-phone').value,
-                service: serviceLabels[selectedService] || selectedService,
-                vehicle_year: document.getElementById('f-year').value,
-                vehicle_make: document.getElementById('f-make').value,
-                vehicle_model: document.getElementById('f-model').value
+            const toggleMenu = () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    setTimeout(() => {
+                        mobileMenu.classList.remove('opacity-0', 'translate-y-[-20px]', 'pointer-events-none');
+                    }, 10);
+                } else {
+                    mobileMenu.classList.add('opacity-0', 'translate-y-[-20px]', 'pointer-events-none');
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                    }, 300); // Wait for transition
+                }
+                iconMenu.classList.toggle('hidden');
+                iconClose.classList.toggle('hidden');
             };
 
-            // Send to GHL webhook (fire and forget — don't block the UI)
-            fetch(GHL_WEBHOOK, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload),
-                mode: 'no-cors' // GHL may not return CORS headers
-            }).catch(() => {}); // silently handle — user already sees success
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
 
-            // Show success screen immediately
-            const step3 = document.getElementById('funnel-step-3');
-            step3.style.opacity = '0';
-            setTimeout(() => {
-                step3.classList.add('hidden');
-                const success = document.getElementById('funnel-success');
-                success.classList.remove('hidden');
-                void success.offsetWidth;
-                success.style.opacity = '1';
-                document.getElementById('step-progress').style.opacity = '0.3';
-            }, 350);
-        });
+            // 4. Interactive Gallery (Before/After Slider)
+            const container = document.getElementById('before-after-container');
+            const beforeImage = document.getElementById('before-image');
+            const sliderLine = document.getElementById('slider-line');
 
-        // Trigger initial fade
-        setTimeout(() => window.dispatchEvent(new Event('scroll')), 100);
-    </script>
+            const moveSlider = (clientX) => {
+                const rect = container.getBoundingClientRect();
+                let x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+                let percentage = (x / rect.width) * 100;
+
+                beforeImage.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+                sliderLine.style.left = `${percentage}%`;
+            };
+
+            container.addEventListener('mousemove', (e) => moveSlider(e.clientX));
+            container.addEventListener('touchmove', (e) => {
+                // Prevent scrolling when using slider on mobile
+                if (e.cancelable) e.preventDefault();
+                moveSlider(e.touches[0].clientX);
+            }, { passive: false });
+
+            // 5. LEAD FUNNEL STEP LOGIC
+            let currentStep = 1;
+            let selectedService = '';
+            const serviceLabels = {
+                'wrap': 'Car Wrap',
+                'starlight': 'Starlight Headliner',
+                'chrome': 'Chrome Delete',
+                'ambient': 'Ambient Lighting',
+                'multiple': 'Multiple Services'
+            };
+
+            function selectService(btn) {
+                // Remove active state from all
+                document.querySelectorAll('.service-option').forEach(b => {
+                    b.style.borderColor = 'rgba(255,255,255,0.1)';
+                    b.style.background = 'rgba(255,255,255,0.05)';
+                });
+                // Set active on clicked
+                btn.style.borderColor = '#2563eb';
+                btn.style.background = 'rgba(37,99,235,0.15)';
+                selectedService = btn.dataset.service;
+
+                // Auto-advance to step 2 after a brief visual cue
+                setTimeout(() => goToStep(2), 350);
+            }
+
+            function goToStep(step) {
+                const prev = document.getElementById('funnel-step-' + currentStep);
+                const next = document.getElementById('funnel-step-' + step);
+                if (!prev || !next) return;
+
+                // Update labels
+                if (step >= 2) {
+                    document.getElementById('selected-service-label').textContent = serviceLabels[selectedService] || '—';
+                }
+                if (step >= 3) {
+                    const year = document.getElementById('f-year').value;
+                    const make = document.getElementById('f-make').value;
+                    const model = document.getElementById('f-model').value;
+                    document.getElementById('summary-service').textContent = serviceLabels[selectedService] || '—';
+                    document.getElementById('summary-vehicle').textContent = [year, make, model].filter(Boolean).join(' ') || '—';
+                }
+
+                // Determine animation direction
+                const direction = step > currentStep ? 30 : -30;
+
+                // Fade out current
+                prev.style.opacity = '0';
+                prev.style.transform = `translateX(${-direction}px)`;
+
+                setTimeout(() => {
+                    prev.classList.add('hidden');
+                    next.classList.remove('hidden');
+                    next.style.opacity = '0';
+                    next.style.transform = `translateX(${direction}px)`;
+
+                    // Force reflow
+                    void next.offsetWidth;
+
+                    next.style.opacity = '1';
+                    next.style.transform = 'translateX(0)';
+                    currentStep = step;
+                    updateProgressBar(step);
+                }, 350);
+            }
+
+            function updateProgressBar(step) {
+                for (let i = 1; i <= 3; i++) {
+                    const dot = document.getElementById('dot-' + i);
+                    const label = document.getElementById('label-' + i);
+                    if (i <= step) {
+                        dot.style.background = '#2563eb';
+                        dot.style.borderColor = '#2563eb';
+                        if (label) label.style.color = '#2563eb';
+                    } else {
+                        dot.style.background = 'transparent';
+                        dot.style.borderColor = 'rgba(255,255,255,0.2)';
+                        if (label) label.style.color = 'rgba(255,255,255,0.3)';
+                    }
+                }
+                // Progress lines
+                const line1 = document.getElementById('line-1');
+                const line2 = document.getElementById('line-2');
+                line1.style.background = step >= 2 ? '#2563eb' : 'rgba(255,255,255,0.1)';
+                line2.style.background = step >= 3 ? '#2563eb' : 'rgba(255,255,255,0.1)';
+            }
+
+            // Form submit handler — sends to Go High Level webhook
+            const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/WUVAYLbNLTUKfH1ze9SV/webhook-trigger/1385a14c-93c3-4666-b284-07115f53ec24';
+
+            document.getElementById('quote-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Collect all funnel data
+                const payload = {
+                    full_name: document.getElementById('f-name').value,
+                    email: document.getElementById('f-email').value,
+                    phone: document.getElementById('f-phone').value,
+                    service: serviceLabels[selectedService] || selectedService,
+                    vehicle_year: document.getElementById('f-year').value,
+                    vehicle_make: document.getElementById('f-make').value,
+                    vehicle_model: document.getElementById('f-model').value
+                };
+
+                // Send to GHL webhook using sendBeacon (reliable, no CORS issues)
+                const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+                const sent = navigator.sendBeacon(GHL_WEBHOOK, blob);
+                
+                // Fallback: if sendBeacon fails, try fetch
+                if (!sent) {
+                    fetch(GHL_WEBHOOK, {
+                        method: 'POST',
+                        body: JSON.stringify(payload),
+                        headers: { 'Content-Type': 'text/plain' },
+                        mode: 'no-cors'
+                    }).catch(() => {});
+                }
+
+                // Show success screen immediately
+                const step3 = document.getElementById('funnel-step-3');
+                step3.style.opacity = '0';
+                setTimeout(() => {
+                    step3.classList.add('hidden');
+                    const success = document.getElementById('funnel-success');
+                    success.classList.remove('hidden');
+                    void success.offsetWidth;
+                    success.style.opacity = '1';
+                    document.getElementById('step-progress').style.opacity = '0.3';
+                }, 350);
+            });
+
+            // Trigger initial fade
+            setTimeout(() => window.dispatchEvent(new Event('scroll')), 100);
+        </script>
 </body>
+
 </html>
