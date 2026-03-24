@@ -2190,32 +2190,34 @@
                 e.preventDefault();
                 e.stopPropagation();
 
-                // Read ALL values BEFORE any DOM changes
-                const nameVal = document.getElementById('f-name').value || '';
-                const emailVal = document.getElementById('f-email').value || '';
-                const phoneVal = document.getElementById('f-phone').value || '';
-                const yearVal = document.getElementById('f-year').value || '';
-                const makeVal = document.getElementById('f-make').value || '';
-                const modelVal = document.getElementById('f-model').value || '';
-                const serviceVal = serviceLabels[selectedService] || selectedService || '';
+                // Capture Values: Use document.querySelector to explicitly grab the values
+                const nameValue = document.querySelector('#f-name').value || '';
+                const emailValue = document.querySelector('#f-email').value || '';
+                const phoneValue = document.querySelector('#f-phone').value || '';
+                const yearValue = document.querySelector('#f-year').value || '';
+                const makeValue = document.querySelector('#f-make').value || '';
+                const modelValue = document.querySelector('#f-model').value || '';
+                const serviceValue = serviceLabels[selectedService] || selectedService || '';
 
-                // Build URL-encoded body
-                const params = new URLSearchParams();
-                params.append('full_name', nameVal);
-                params.append('email', emailVal);
-                params.append('phone', phoneVal);
-                params.append('service', serviceVal);
-                params.append('vehicle_year', yearVal);
-                params.append('vehicle_make', makeVal);
-                params.append('vehicle_model', modelVal);
+                // Verify JSON: Ensure the body of the fetch request looks exactly like this
+                const requestBody = {
+                    "full_name": nameValue,
+                    "email": emailValue,
+                    "phone": phoneValue,
+                    "service": serviceValue,
+                    "vehicle_year": yearValue,
+                    "vehicle_make": makeValue,
+                    "vehicle_model": modelValue
+                };
 
-                console.log('GHL Payload:', Object.fromEntries(params));
-
-                // Send via XMLHttpRequest (most reliable for cross-origin)
-                const xhr = new XMLHttpRequest();
-                xhr.open('POST', GHL_WEBHOOK, true);
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                xhr.send(params.toString());
+                // Send using fetch with Content-Type: application/json
+                fetch(GHL_WEBHOOK, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(requestBody)
+                }).catch(err => console.error('Error sending to GHL:', err));
 
                 // Show success screen
                 const step3 = document.getElementById('funnel-step-3');
