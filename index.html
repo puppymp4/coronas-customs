@@ -1517,6 +1517,49 @@
                         style="text-align:center; margin-top:1.5rem; color:rgba(255,255,255,0.4); font-size:0.85rem; font-weight:500;">
                         👆 Tap to view more of our work</p>
 
+                    <!-- Custom Slider 2 - Acura ILX -->
+                    <div style="margin-top:3rem;">
+                        <a href="gallery-car-wraps.html" class="block max-w-5xl mx-auto"
+                            style="text-decoration:none; color:inherit;">
+                            <div id="before-after-container-2"
+                                class="relative w-full aspect-video rounded-3xl overflow-hidden cursor-e-resize touch-none select-none group"
+                                style="border:1px solid #000;">
+                                <img loading="lazy" src="gallery-after-2.jpg"
+                                    alt="After - Pink Wrapped Acura ILX by Coronas Customz" draggable="false"
+                                    class="absolute inset-0 w-full h-full object-cover"
+                                    style="will-change: transform; transform: translateZ(0);">
+                                <div class="absolute px-4 py-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 font-bold uppercase tracking-widest text-xs z-10"
+                                    style="top:1.5rem; right:1.5rem;">
+                                    After
+                                </div>
+
+                                <div id="before-image-2" class="absolute inset-0 w-full h-full"
+                                    style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                                    <img loading="lazy" src="gallery-before-2.jpg" alt="Before - Black Acura ILX"
+                                        draggable="false" class="absolute inset-0 w-full h-full object-cover"
+                                        style="will-change: transform; transform: translateZ(0);">
+                                    <div class="absolute px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 font-bold uppercase tracking-widest text-xs z-10"
+                                        style="top:1.5rem; left:1.5rem;">
+                                        Before
+                                    </div>
+                                </div>
+
+                                <div id="slider-line-2" class="absolute top-0 bottom-0 z-20 pointer-events-none"
+                                    style="width:2px; background:#2563eb; box-shadow:0 0 15px rgba(37,99,235,1); left:50%;">
+                                    <div class="absolute bg-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                                        style="top:50%; left:50%; transform:translate(-50%,-50%); width:2.5rem; height:2.5rem; box-shadow:0 0 20px rgba(37,99,235,0.5);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="text-white">
+                                            <path d="M5 12h14" />
+                                            <path d="m12 5 7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
                     <!-- INSTAGRAM CTA -->
                     <div style="text-align:center; margin-top:2.5rem;">
                         <a href="https://www.instagram.com/coronascustomz/" target="_blank" rel="noopener noreferrer"
@@ -2272,26 +2315,68 @@
                 link.addEventListener('click', toggleMenu);
             });
 
-            // 4. Interactive Gallery (Before/After Slider)
-            const container = document.getElementById('before-after-container');
-            const beforeImage = document.getElementById('before-image');
-            const sliderLine = document.getElementById('slider-line');
+            // 4. Interactive Gallery (Before/After Sliders with Auto-Animation)
+            function initSlider(containerId, beforeId, lineId) {
+                const cont = document.getElementById(containerId);
+                const bImg = document.getElementById(beforeId);
+                const line = document.getElementById(lineId);
+                if (!cont || !bImg || !line) return null;
 
-            const moveSlider = (clientX) => {
-                const rect = container.getBoundingClientRect();
-                let x = Math.max(0, Math.min(clientX - rect.left, rect.width));
-                let percentage = (x / rect.width) * 100;
+                let pct = 50;
+                let userActive = false;
+                let userTimeout = null;
 
-                beforeImage.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
-                sliderLine.style.left = `${percentage}%`;
-            };
+                const setPosition = (p) => {
+                    pct = p;
+                    bImg.style.clipPath = `polygon(0 0, ${p}% 0, ${p}% 100%, 0 100%)`;
+                    line.style.left = `${p}%`;
+                };
 
-            container.addEventListener('mousemove', (e) => moveSlider(e.clientX));
-            container.addEventListener('touchmove', (e) => {
-                // Prevent scrolling when using slider on mobile
-                if (e.cancelable) e.preventDefault();
-                moveSlider(e.touches[0].clientX);
-            }, { passive: false });
+                const onMove = (clientX) => {
+                    const rect = cont.getBoundingClientRect();
+                    let x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+                    setPosition((x / rect.width) * 100);
+                    userActive = true;
+                    clearTimeout(userTimeout);
+                    userTimeout = setTimeout(() => { userActive = false; }, 3000);
+                };
+
+                cont.addEventListener('mousemove', (e) => onMove(e.clientX));
+                cont.addEventListener('touchmove', (e) => {
+                    if (e.cancelable) e.preventDefault();
+                    onMove(e.touches[0].clientX);
+                }, { passive: false });
+
+                return { setPosition, isUserActive: () => userActive, getPct: () => pct };
+            }
+
+            const slider1 = initSlider('before-after-container', 'before-image', 'slider-line');
+            const slider2 = initSlider('before-after-container-2', 'before-image-2', 'slider-line-2');
+
+            // Auto-animation: slow oscillation via requestAnimationFrame
+            const allSliders = [slider1, slider2].filter(Boolean);
+            const autoAngles = allSliders.map((_, i) => i * Math.PI * 0.5);
+            let lastAutoTime = 0;
+            const autoSpeed = 0.3;
+
+            function animateSliders(timestamp) {
+                if (!lastAutoTime) lastAutoTime = timestamp;
+                const dt = (timestamp - lastAutoTime) / 1000;
+                lastAutoTime = timestamp;
+
+                allSliders.forEach((s, i) => {
+                    if (!s.isUserActive()) {
+                        autoAngles[i] += autoSpeed * dt;
+                        const p = 50 + Math.sin(autoAngles[i]) * 25;
+                        s.setPosition(p);
+                    } else {
+                        const clamped = Math.max(-1, Math.min(1, (s.getPct() - 50) / 25));
+                        autoAngles[i] = Math.asin(clamped);
+                    }
+                });
+                requestAnimationFrame(animateSliders);
+            }
+            requestAnimationFrame(animateSliders);
 
             // 5. LEAD FUNNEL STEP LOGIC
             let currentStep = 1;
