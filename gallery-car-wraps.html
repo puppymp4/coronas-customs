@@ -70,6 +70,16 @@
         .service-dropdown-menu a.active { background: rgba(37,99,235,0.15); color: #60a5fa; }
         .service-dropdown-menu a .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.5; }
 
+        /* --- SEE MORE BAR --- */
+        .see-more-bar {
+            display: flex; align-items: center; justify-content: center; gap: 1rem;
+            max-width: 80rem; margin: 0 auto; padding: 1.5rem 1.5rem 0;
+        }
+        .see-more-bar span.see-more-label {
+            font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.12em; color: rgba(255,255,255,0.35);
+        }
+
         /* --- COVER HERO --- */
         .gallery-cover {
             position: relative; width: 100%; height: 50vh; min-height: 320px; max-height: 500px; overflow: hidden;
@@ -170,18 +180,6 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
                 Back to Home
             </a>
-            <div class="service-dropdown-wrapper">
-                <button class="service-dropdown-btn" onclick="toggleDropdown()" id="dropdown-btn">
-                    <span>Car Wraps</span>
-                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                </button>
-                <div class="service-dropdown-menu" id="dropdown-menu">
-                    <a href="gallery-car-wraps.html" class="active"><span class="dot"></span> Car Wraps</a>
-                    <a href="gallery-starlight-headliner.html"><span class="dot"></span> Starlight Headliner</a>
-                    <a href="gallery-headliner-work.html"><span class="dot"></span> Headliner Work</a>
-                    <a href="gallery-ambient-lighting.html"><span class="dot"></span> Ambient Lighting</a>
-                </div>
-            </div>
         </div>
     </nav>
 
@@ -192,6 +190,23 @@
             <span class="label">Service Gallery</span>
             <h1>CAR <em>WRAPS</em></h1>
             <p>Full and partial vinyl wraps that completely change the look of your ride. Browse our recent work below.</p>
+        </div>
+    </div>
+
+    <!-- SEE MORE DROPDOWN -->
+    <div class="see-more-bar">
+        <span class="see-more-label">See More</span>
+        <div class="service-dropdown-wrapper">
+            <button class="service-dropdown-btn" onclick="toggleDropdown()" id="dropdown-btn">
+                <span>Car Wraps</span>
+                <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="service-dropdown-menu" id="dropdown-menu">
+                <a href="gallery-car-wraps.html" class="active"><span class="dot"></span> Car Wraps</a>
+                <a href="gallery-starlight-headliner.html"><span class="dot"></span> Starlight Headliner</a>
+                <a href="gallery-headliner-work.html"><span class="dot"></span> Headliner Work</a>
+                <a href="gallery-ambient-lighting.html"><span class="dot"></span> Ambient Lighting</a>
+            </div>
         </div>
     </div>
 
