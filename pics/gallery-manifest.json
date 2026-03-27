@@ -1,0 +1,56 @@
+{
+  "gallery-wraps": {
+    "files": [
+      "Cover_Image.jpg",
+      "IMG_0253.jpg",
+      "IMG_0309.jpg",
+      "IMG_0348(1).jpg",
+      "IMG_0381.jpg",
+      "IMG_0382.jpg",
+      "IMG_0493.jpg",
+      "IMG_4426.jpg",
+      "IMG_4898.jpg",
+      "IMG_5785.jpg",
+      "IMG_6137.jpg",
+      "IMG_6923.jpg",
+      "IMG_7675.jpg",
+      "IMG_8785.jpg"
+    ],
+    "cover": "Cover_Image.jpg"
+  },
+  "gallery-starlights": {
+    "files": [
+      "Cover_Imgae.jpg",
+      "IMG_2180.jpg",
+      "IMG_2258.jpg",
+      "IMG_2750.jpg",
+      "IMG_3559.jpg",
+      "IMG_3664.jpg",
+      "IMG_3772.jpg",
+      "IMG_4249.jpg",
+      "IMG_5066.jpg",
+      "IMG_5536.jpg"
+    ],
+    "cover": "Cover_Imgae.jpg"
+  },
+  "gallery-headliner": {
+    "files": [
+      "Cover_Imgae.jpg",
+      "IMG_1708.jpg",
+      "IMG_1731(1).jpg",
+      "IMG_1731.jpg",
+      "IMG_2086.jpg"
+    ],
+    "cover": "Cover_Imgae.jpg"
+  },
+  "gallery-ambient": {
+    "files": [
+      "COVER_IMAGE.jpg",
+      "IMG_2253.jpg",
+      "IMG_6753.jpg",
+      "IMG_6842.jpg",
+      "IMG_7810.jpg"
+    ],
+    "cover": "COVER_IMAGE.jpg"
+  }
+}
