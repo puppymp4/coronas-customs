@@ -1,0 +1,7 @@
+# Coronas Customz - robots.txt
+User-agent: *
+Allow: /
+Disallow: /pics/
+
+# Sitemap
+Sitemap: https://coronas-customs.vercel.app/sitemap.xml
