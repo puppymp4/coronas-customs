@@ -1970,6 +1970,13 @@
                                     <input type="text" id="f-model" placeholder="e.g. Camry, Civic, Mustang"
                                         class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
                                 </div>
+                                <div>
+                                    <label
+                                        class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Details / Notes</label>
+                                    <textarea id="f-description" rows="3" placeholder="Tell us what you're looking for — specific colors, styles, or any details that help us quote accurately."
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-none"
+                                        style="font-family: inherit;"></textarea>
+                                </div>
                             </div>
 
                             <div class="flex gap-3 mt-8 max-w-md mx-auto">
@@ -2373,41 +2380,46 @@
                 line2.style.background = step >= 3 ? '#2563eb' : 'rgba(255,255,255,0.1)';
             }
 
-            // Form submit handler — sends to Go High Level webhook
-            const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/WUVAYLbNLTUKfH1ze9SV/webhook-trigger/1385a14c-93c3-4666-b284-07115f53ec24';
+            // Form submit handler — sends to Web3Forms
+            const WEB3FORMS_KEY = 'dd75dd23-2aae-4db3-aff4-99692a8086e5';
 
             document.getElementById('quote-form').addEventListener('submit', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
 
-                // Capture Values: Use document.querySelector to explicitly grab the values
+                // Capture Values
                 const nameValue = document.querySelector('#f-name').value || '';
                 const emailValue = document.querySelector('#f-email').value || '';
                 const phoneValue = document.querySelector('#f-phone').value || '';
                 const yearValue = document.querySelector('#f-year').value || '';
                 const makeValue = document.querySelector('#f-make').value || '';
                 const modelValue = document.querySelector('#f-model').value || '';
+                const descValue = document.querySelector('#f-description').value || '';
                 const serviceValue = serviceLabels[selectedService] || selectedService || '';
 
-                // Verify JSON: Ensure the body of the fetch request looks exactly like this
                 const requestBody = {
-                    "full_name": nameValue,
+                    "access_key": WEB3FORMS_KEY,
+                    "subject": "New Quote Request — " + serviceValue + " | Coronas Customz",
+                    "from_name": "Coronas Customz Website",
+                    "name": nameValue,
                     "email": emailValue,
                     "phone": phoneValue,
                     "service": serviceValue,
-                    "vehicle_year": yearValue,
-                    "vehicle_make": makeValue,
-                    "vehicle_model": modelValue
+                    "vehicle": [yearValue, makeValue, modelValue].filter(Boolean).join(' ') || 'Not specified',
+                    "details": descValue || 'No additional details',
                 };
 
-                // Send using fetch with Content-Type: application/json
-                fetch(GHL_WEBHOOK, {
+                // Send to Web3Forms API
+                fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
                     },
                     body: JSON.stringify(requestBody)
-                }).catch(err => console.error('Error sending to GHL:', err));
+                }).then(res => res.json())
+                  .then(data => console.log('Web3Forms:', data))
+                  .catch(err => console.error('Error sending form:', err));
 
                 // Show success screen
                 const step3 = document.getElementById('funnel-step-3');
