@@ -1475,32 +1475,32 @@
                         style="text-decoration:none; color:inherit;">
                         <div id="before-after-container"
                             class="relative w-full aspect-video rounded-3xl overflow-hidden cursor-e-resize touch-none select-none group"
-                            style="border:1px solid #000;">
-                            <!-- After Image -->
-                            <img loading="lazy" src="gallery-after.jpg"
+                            style="border:1px solid #000; isolation:isolate;">
+                            <!-- After Image (bottom layer) -->
+                            <img loading="eager" src="gallery-after.jpg"
                                 alt="After - Pink Wrapped Chevy Malibu by Coronas Customz" draggable="false"
                                 class="absolute inset-0 w-full h-full object-cover"
-                                style="will-change: transform; transform: translateZ(0);">
-                            <div class="absolute px-4 py-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 font-bold uppercase tracking-widest text-xs z-10"
-                                style="top:1.5rem; right:1.5rem;">
+                                style="z-index:1; will-change:transform; transform:translateZ(0);">
+                            <div class="absolute px-4 py-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 font-bold uppercase tracking-widest text-xs"
+                                style="top:1.5rem; right:1.5rem; z-index:5;">
                                 After
                             </div>
 
-                            <!-- Before Image Container -->
+                            <!-- Before Image (top layer, clipped) -->
                             <div id="before-image" class="absolute inset-0 w-full h-full"
-                                style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
-                                <img loading="lazy" src="gallery-before.jpg" alt="Before - White Chevy Malibu"
-                                    draggable="false" class="absolute inset-0 w-full h-full object-cover"
-                                    style="will-change: transform; transform: translateZ(0);">
-                                <div class="absolute px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 font-bold uppercase tracking-widest text-xs z-10"
-                                    style="top:1.5rem; left:1.5rem;">
+                                style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); z-index:10;">
+                                <img loading="eager" src="gallery-before.jpg" alt="Before - White Chevy Malibu"
+                                    draggable="false" class="w-full h-full object-cover"
+                                    style="display:block; will-change:transform; transform:translateZ(0);">
+                                <div class="absolute px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 font-bold uppercase tracking-widest text-xs"
+                                    style="top:1.5rem; left:1.5rem; z-index:15;">
                                     Before
                                 </div>
                             </div>
 
-                            <!-- Dynamic Slider Line & Arrows -->
-                            <div id="slider-line" class="absolute top-0 bottom-0 z-20 pointer-events-none"
-                                style="width:2px; background:#2563eb; box-shadow:0 0 15px rgba(37,99,235,1); left:50%;">
+                            <!-- Slider Line -->
+                            <div id="slider-line" class="absolute top-0 bottom-0 pointer-events-none"
+                                style="width:2px; background:#2563eb; box-shadow:0 0 15px rgba(37,99,235,1); left:50%; z-index:20;">
                                 <div class="absolute bg-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
                                     style="top:50%; left:50%; transform:translate(-50%,-50%); width:2.5rem; height:2.5rem; box-shadow:0 0 20px rgba(37,99,235,0.5);">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
@@ -1523,29 +1523,32 @@
                             style="text-decoration:none; color:inherit;">
                             <div id="before-after-container-2"
                                 class="relative w-full aspect-video rounded-3xl overflow-hidden cursor-e-resize touch-none select-none group"
-                                style="border:1px solid #000;">
-                                <img loading="lazy" src="gallery-after-2.jpg"
+                                style="border:1px solid #000; isolation:isolate;">
+                                <!-- After Image (bottom layer) -->
+                                <img loading="eager" src="gallery-after-2.jpg"
                                     alt="After - Pink Wrapped Acura ILX by Coronas Customz" draggable="false"
                                     class="absolute inset-0 w-full h-full object-cover"
-                                    style="will-change: transform; transform: translateZ(0);">
-                                <div class="absolute px-4 py-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 font-bold uppercase tracking-widest text-xs z-10"
-                                    style="top:1.5rem; right:1.5rem;">
+                                    style="z-index:1; will-change:transform; transform:translateZ(0);">
+                                <div class="absolute px-4 py-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 font-bold uppercase tracking-widest text-xs"
+                                    style="top:1.5rem; right:1.5rem; z-index:5;">
                                     After
                                 </div>
 
+                                <!-- Before Image (top layer, clipped) -->
                                 <div id="before-image-2" class="absolute inset-0 w-full h-full"
-                                    style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
-                                    <img loading="lazy" src="gallery-before-2.jpg" alt="Before - Black Acura ILX"
-                                        draggable="false" class="absolute inset-0 w-full h-full object-cover"
-                                        style="will-change: transform; transform: translateZ(0);">
-                                    <div class="absolute px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 font-bold uppercase tracking-widest text-xs z-10"
-                                        style="top:1.5rem; left:1.5rem;">
+                                    style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); z-index:10;">
+                                    <img loading="eager" src="gallery-before-2.jpg" alt="Before - Black Acura ILX"
+                                        draggable="false" class="w-full h-full object-cover"
+                                        style="display:block; will-change:transform; transform:translateZ(0);">
+                                    <div class="absolute px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 font-bold uppercase tracking-widest text-xs"
+                                        style="top:1.5rem; left:1.5rem; z-index:15;">
                                         Before
                                     </div>
                                 </div>
 
-                                <div id="slider-line-2" class="absolute top-0 bottom-0 z-20 pointer-events-none"
-                                    style="width:2px; background:#2563eb; box-shadow:0 0 15px rgba(37,99,235,1); left:50%;">
+                                <!-- Slider Line -->
+                                <div id="slider-line-2" class="absolute top-0 bottom-0 pointer-events-none"
+                                    style="width:2px; background:#2563eb; box-shadow:0 0 15px rgba(37,99,235,1); left:50%; z-index:20;">
                                     <div class="absolute bg-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
                                         style="top:50%; left:50%; transform:translate(-50%,-50%); width:2.5rem; height:2.5rem; box-shadow:0 0 20px rgba(37,99,235,0.5);">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
