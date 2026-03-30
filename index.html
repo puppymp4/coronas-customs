@@ -2465,8 +2465,9 @@
                 line2.style.background = step >= 3 ? '#2563eb' : 'rgba(255,255,255,0.1)';
             }
 
-            // Form submit handler — sends to Web3Forms
-            const WEB3FORMS_KEY = 'dd75dd23-2aae-4db3-aff4-99692a8086e5';
+            // Form submit handler — sends to BOTH Web3Forms keys
+            const WEB3FORMS_KEY_1 = 'dd75dd23-2aae-4db3-aff4-99692a8086e5';
+            const WEB3FORMS_KEY_2 = 'b1f5ee9b-cbd4-4989-831e-cce40abfc6f6';
 
             document.getElementById('quote-form').addEventListener('submit', function (e) {
                 e.preventDefault();
@@ -2482,8 +2483,7 @@
                 const descValue = document.querySelector('#f-description').value || '';
                 const serviceValue = serviceLabels[selectedService] || selectedService || '';
 
-                const requestBody = {
-                    "access_key": WEB3FORMS_KEY,
+                const basePayload = {
                     "subject": "New Quote Request — " + serviceValue + " | Coronas Customz",
                     "from_name": "Coronas Customz Website",
                     "name": nameValue,
@@ -2494,17 +2494,22 @@
                     "details": descValue || 'No additional details',
                 };
 
-                // Send to Web3Forms API
-                fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(requestBody)
-                }).then(res => res.json())
-                  .then(data => console.log('Web3Forms:', data))
-                  .catch(err => console.error('Error sending form:', err));
+                // Send to BOTH Web3Forms keys in parallel
+                const sendToKey = (key, label) => {
+                    return fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({ ...basePayload, "access_key": key })
+                    }).then(res => res.json())
+                      .then(data => console.log('Web3Forms (' + label + '):', data))
+                      .catch(err => console.error('Error sending to ' + label + ':', err));
+                };
+
+                sendToKey(WEB3FORMS_KEY_1, 'Primary');
+                sendToKey(WEB3FORMS_KEY_2, 'Secondary');
 
                 // Show success screen
                 const step3 = document.getElementById('funnel-step-3');
