@@ -1,1 +1,63 @@
-.vercel
+# ═══════════════════════════════════════════════════════
+# .gitignore — Coronas Customs | Rift Media
+# ═══════════════════════════════════════════════════════
+
+# ── Dependencies ──────────────────────────────────────
+node_modules/
+package-lock.json
+
+# ── Environment & Secrets ─────────────────────────────
+# STRICTLY block ALL .env files — never commit credentials
+.env
+.env.*
+.env.local
+.env.development
+.env.production
+.env.staging
+*.env
+
+# ── API Keys & Credentials ───────────────────────────
+# Explicitly block common credential file patterns
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+secrets.json
+credentials.json
+service-account*.json
+
+# ── Vercel ────────────────────────────────────────────
+.vercel/
+
+# ── OS-Specific ──────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ── Editor / IDE ─────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# ── Build Artifacts ──────────────────────────────────
+dist/
+build/
+.cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Workspace Files ──────────────────────────────────
+*.code-workspace
