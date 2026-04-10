@@ -12,21 +12,21 @@
     <meta name="description"
         content="Coronas Customz is Fresno's top custom auto shop. Full vinyl car wraps, starlight headliners, custom suede headliners, ambient interior lighting, suspension & chrome deletes. Serving Fresno, Clovis & Central Valley. Get a free quote — (559) 513-5505.">
     <meta name="keywords" content="car wraps fresno, vinyl wrap fresno, custom car wrap fresno ca, starlight headliner fresno, custom headliner fresno, ambient lighting car fresno, suspension shop fresno, chrome delete fresno, car customization fresno clovis, vehicle wrap near me">
-    <link rel="canonical" href="https://coronas-customs.vercel.app/">
+    <link rel="canonical" href="https://coronascustomz.com/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://coronas-customs.vercel.app/">
+    <meta property="og:url" content="https://coronascustomz.com/">
     <meta property="og:title" content="Coronas Customz | #1 Custom Car Wraps & Auto Styling in Fresno, CA">
     <meta property="og:description" content="Full vinyl car wraps, starlight headliners, ambient lighting, suspension & more. Fresno's top custom auto shop. Get a free quote today!">
-    <meta property="og:image" content="https://coronas-customs.vercel.app/hero-shop.jpg">
+    <meta property="og:image" content="https://coronascustomz.com/hero-shop.jpg">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Coronas Customz | Custom Car Wraps & Auto Styling in Fresno, CA">
     <meta name="twitter:description" content="Full vinyl wraps, starlight headliners, ambient lighting & more in Fresno. Get a free quote!">
-    <meta name="twitter:image" content="https://coronas-customs.vercel.app/hero-shop.jpg">
+    <meta name="twitter:image" content="https://coronascustomz.com/hero-shop.jpg">
 
     <!-- Geo Meta Tags -->
     <meta name="geo.region" content="US-CA">
@@ -52,11 +52,11 @@
         "name": "Coronas Customz LLC",
         "alternateName": "Coronas Customz",
         "description": "Fresno's premier custom auto shop specializing in full vinyl car wraps, starlight headliner installations, custom suede headliners, ambient interior LED lighting, suspension upgrades, and chrome deletes. Serving Fresno, Clovis, and the Central Valley.",
-        "url": "https://coronas-customs.vercel.app",
+        "url": "https://coronascustomz.com",
         "telephone": "+1-559-513-5505",
         "email": "coronascustomz@gmail.com",
-        "image": "https://coronas-customs.vercel.app/hero-shop.jpg",
-        "logo": "https://coronas-customs.vercel.app/logo.png",
+        "image": "https://coronascustomz.com/hero-shop.jpg",
+        "logo": "https://coronascustomz.com/logo.png",
         "priceRange": "$$",
         "address": {
             "@type": "PostalAddress",
@@ -1977,6 +1977,7 @@
                                         <label
                                             class="text-xs uppercase tracking-widest text-white/50 font-bold mb-2 block">Year</label>
                                         <input type="text" id="f-year" placeholder="2022" maxlength="4"
+                                            pattern="[0-9]{4}" inputmode="numeric" title="Enter a 4-digit year"
                                             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-center" />
                                     </div>
                                     <div class="col-span-2">
@@ -2075,13 +2076,18 @@
                                         class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
                                 </div>
 
+                                <!-- Honeypot: hidden from humans, bots auto-fill → submission discarded -->
+                                <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                                    <input type="text" name="botcheck" id="f-botcheck" tabindex="-1" autocomplete="off">
+                                </div>
+
                                 <div class="flex gap-3 mt-6">
                                     <button type="button" onclick="goToStep(2)"
                                         class="px-6 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold uppercase tracking-widest hover:bg-white/10 active:scale-95 transition-all duration-200 cursor-pointer"
                                         style="flex-shrink:0;">
                                         ← Back
                                     </button>
-                                    <button type="submit"
+                                    <button type="submit" id="submit-btn"
                                         class="w-full py-4 rounded-full bg-blue-600 text-white font-bold uppercase tracking-widest hover:bg-blue-500 active:scale-95 transition-all duration-200 cursor-pointer border-none outline-none"
                                         style="box-shadow:0 0 25px rgba(37,99,235,0.4);">
                                         🚗 Get My Custom Quote
@@ -2479,9 +2485,26 @@
             const WEB3FORMS_KEY_1 = 'dd75dd23-2aae-4db3-aff4-99692a8086e5';
             const WEB3FORMS_KEY_2 = 'b1f5ee9b-cbd4-4989-831e-cce40abfc6f6';
 
+            // Anti-spam: rate limiter (30s cooldown between submissions)
+            let lastSubmitTime = 0;
+            const SUBMIT_COOLDOWN = 30000;
+
             document.getElementById('quote-form').addEventListener('submit', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
+
+                // Honeypot check: if bot filled the hidden field, silently discard
+                if (document.getElementById('f-botcheck').value) {
+                    console.log('Bot detected — submission blocked.');
+                    return false;
+                }
+
+                // Rate limiter: prevent rapid resubmission
+                const now = Date.now();
+                if (now - lastSubmitTime < SUBMIT_COOLDOWN) {
+                    return false;
+                }
+                lastSubmitTime = now;
 
                 // Capture Values
                 const nameValue = document.querySelector('#f-name').value || '';
