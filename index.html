@@ -154,8 +154,11 @@
         }
 
         select,
-        input {
+        input,
+        textarea {
             font-family: inherit;
+            /* iOS Safari auto-zooms when a focused input's font-size is <16px. Lock to 16px to prevent that zoom. */
+            font-size: 16px;
         }
 
         /* === LAYOUT === */
