@@ -1,3 +1,10 @@
 # 301 .html URLs to clean URLs to consolidate indexing
-/index.html              /                              301!
-/:slug.html              /:slug                         301!
+/index.html                          /                                301!
+/car-wraps-fresno.html               /car-wraps-fresno                301!
+/starlight-headliner-fresno.html     /starlight-headliner-fresno      301!
+/custom-headliner-fresno.html        /custom-headliner-fresno         301!
+/ambient-lighting-fresno.html        /ambient-lighting-fresno         301!
+/gallery-car-wraps.html              /gallery-car-wraps               301!
+/gallery-starlight-headliner.html    /gallery-starlight-headliner     301!
+/gallery-headliner-work.html         /gallery-headliner-work          301!
+/gallery-ambient-lighting.html       /gallery-ambient-lighting        301!
